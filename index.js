@@ -63,16 +63,65 @@ firstLetterA ("bcd");
 
 {//loops
  //1
- function fun () {
+ /* function fun () {
     let div = document.createElement('div');
      document.body.append(div);
      for(let i = 1; i< 51; i++) {
       div.insertAdjacentHTML("beforeend",`<p>${i}</p>`)
      }
  }
+ */
 
-fun();
 
+ //2
+/*  function fun (){
+   let n = 11;
+   let div = document.createElement('div');
+     document.body.append(div);
+     while(n<34) {
+         div.insertAdjacentHTML('beforeend',`${n}<br/>`)
+         n++
+     }
+ } */
+
+//3
+/* function writeEvens () {
+   let n = 0;
+   let div = document.createElement('div');
+     document.body.append(div);
+     while(n < 101) {
+         if (n%2 == 0){
+        div.insertAdjacentHTML('beforeend',`${n}<br/>`)}
+        n++
+     }
+} 
+
+writeEvens ();
+*/
+
+//4
+/* function writeArray(arr) {
+    let div = document.createElement('div');
+     document.body.append(div);
+for(let value of arr){
+    div.insertAdjacentHTML('beforeend',`${value}<br/>`)
+}
+
+}
+ writeArray([1, 2, 3, 4, 5])
+ */
+
+
+function sumArray (arr) {
+    let div = document.createElement('div');
+    document.body.append(div);
+    let sum = 0; 
+    for(let value of arr){
+     sum+= value;
+    }
+    div.innerHTML = sum;
+}
+sumArray([1, 2, 3, 4, 5])
 
  //debugger
 }

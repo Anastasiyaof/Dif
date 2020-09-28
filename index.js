@@ -234,7 +234,7 @@ currentDay(); */
 
 
 //15
-function fun (){
+/* function fun (){
     let n = 1000;
     let result = n;
     while(result>50){
@@ -242,7 +242,18 @@ function fun (){
     }
  console.log(result);
 }
-fun();
+fun(); */
 
  //debugger
+}
+
+
+{//Math
+//1
+function fun (a,b) {
+  if(a%b == 0) alert(`Делится без Остатка! ${a/b}`);
+  else alert(`Делится с остатком! Остаток ${a%b}`);
+}  
+fun(10,3);
+
 }

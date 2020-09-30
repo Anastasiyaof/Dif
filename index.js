@@ -250,10 +250,99 @@ fun(); */
 
 {//Math
 //1
-function fun (a,b) {
+/* function fun (a,b) {
   if(a%b == 0) alert(`Делится без Остатка! ${a/b}`);
   else alert(`Делится с остатком! Остаток ${a%b}`);
 }  
-fun(10,3);
+fun(10,3); */
 
+//2
+/* function sqrtFromPowSum(arr){
+  let pow =[];
+  for(let n of arr) {
+      pow.push(n**2);
+  }
+  let sum = 0;
+  for(let num of pow){
+      sum += num
+  }
+  console.log(Math.sqrt(sum))
+}
+
+sqrtFromPowSum([4, 2, 5, 19, 13, 0, 10]); */
+
+//3
+/* function difRound(n){
+    let num = Math.sqrt(n);
+    console.log(Math.round(num));
+    console.log(Math.floor(num*10)/10);
+    console.log(num.toFixed(1));
+    console.log(Math.floor(num*100)/100);
+    console.log(num.toFixed(2));
+}
+difRound(379) */
+
+//4
+/* function fun (n) {
+   let num = Math.sqrt(n);
+   let obj = {};
+   obj.floor = Math.floor(num);
+   obj.ceil = Math.ceil(num);
+   obj.num = num;
+   console.log(obj);
+}
+fun(587); */
+
+//5
+/* function foundMinMax(arr,minOrMax){
+    if(minOrMax == "min"){
+        alert(Math.min(...arr))
+        return
+    }
+    if(minOrMax == "max"){
+        alert(Math.max(...arr))
+        return
+    }
+}
+foundMinMax([4, -2, 5, 19, -130, 0, 10],"min");
+foundMinMax([4, -2, 5, 19, -130, 0, 10],"max"); */
+
+//6
+/* function randomBetween(a,b){
+    console.log(Math.floor(a+Math.random()*(b-a+1)))
+}
+randomBetween(1,100); */
+
+//7
+/* function randomArray(length){
+    let arr = [];
+    while(arr.length < length){
+        let item = Math.random()*101;
+        arr.push(Math.floor(item));
+    }
+    console.log(arr)
+}
+randomArray(10); */
+
+//8 
+/* function average(arr){
+  let sum = arr.reduce((s,item)=>s+=item,0);
+   console.log(sum/arr.length)
+}
+
+average([1,2,3,4]); */
+
+//9
+function factorial(n) {
+    let result = 1;
+    for(let i = 1; i<=n;i++){
+        result *= i;
+    }
+    console.log(result);
+}
+factorial(4);
+
+
+
+//debugger
 }

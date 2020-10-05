@@ -360,11 +360,64 @@ cutString("я учу javascript!",5); */
 
 
 //2
-function replaceSymbol(str,from,to){
+/* function replaceSymbol(str,from,to){
  let reg = new RegExp(`${from}`,"g")
   console.log(str.replace(reg,to))
 }
+replaceSymbol('я учу javascript!'," ","-"); */
 
-replaceSymbol('я учу javascript!'," ","-");
+//3
+/* function splitByWord(str){
+  console.log(str.split(" "));
+}
+splitByWord('я учу javascript!'); */
+
+//4
+/* function changeDateFormat(str){
+  let arr = str.split('-');
+  console.log(`${arr[2]}.${arr[1]}.${arr[0]}`)
+}
+
+
+changeDateFormat('2025-12-31'); */
+
+//4
+/* function fun (arr) {
+   
+    console.log( arr.join("+"));
+}
+
+fun(['я', 'учу', 'javascript', '!']) */
+
+
+//5
+/* function everyFirstToUpperCase (str) {
+    let arr = str.split("");
+    for(let i=0; i < arr.length;i++){
+        if(i == 0 || arr[i-1] == " "){
+          arr[i] = arr[i].toUpperCase();
+        }
+    }
+    console.log(arr.join(""));
+}
+
+everyFirstToUpperCase('я учу javascript!'); */
+
+
+//6
+/* function toCamelCase(str){
+  let arr = str.split("");
+  let st = "";
+  for(let i=0;i< arr.length;i++){
+      if(arr[i] == "_") {
+          st += arr[i+1].toUpperCase()
+      } else if(arr[i-1] == "_") {
+          continue
+      } else st += arr[i];
+  }
+  console.log(st)
+}
+
+toCamelCase('var_test_text'); */
 
 }

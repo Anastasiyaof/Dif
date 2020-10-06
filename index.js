@@ -421,3 +421,139 @@ everyFirstToUpperCase('я учу javascript!'); */
 toCamelCase('var_test_text'); */
 
 }
+
+{//Array
+  
+//1
+/* function newArrFromArrs (arr1,arr2) {
+    console.log(arr1.concat(arr2))
+}
+
+newArrFromArrs(['a', 'b', 'c'],[1, 2, 3]) */
+
+
+//2
+/* function unitArrays(arr1,arr2) {
+    for(let item of arr2){
+        arr1.push(item)
+    }
+    
+    console.log(arr1)
+}
+
+unitArrays(['a', 'b', 'c'],[1, 2, 3]) */
+
+//3
+/* function fun (array,n) {
+    let arr = array.slice(0,n);
+    console.log(arr)
+}
+fun([1,2,3,4,5,6,7],3); */
+
+//4
+/* function fun (array,n) {
+    let arr = array.slice(-n);
+    console.log(arr);
+}
+fun([1,2,3,4,5,6,7],3);
+ */
+
+ //5
+ /* function fun (arr) {
+   arr.splice(1,2);
+   console.log(arr);
+ }
+ fun([1,2,3,4,5,6,7]) */
+
+
+ //6
+/*  function fun (array) {
+   let arr = array.splice(1,3);
+   console.log(arr);
+ }
+ fun([1,2,3,4,5,6,7]) */
+
+
+ //7
+/*  function fun (arr) {
+    arr.splice(2,0,"a","b","c");
+    console.log(arr);
+  }
+  fun([1,2,3,4,5,6,7])  */
+
+//8
+ /*  function fun (arr) {
+   arr.splice(1,0,"a","b");
+   arr.splice(5,0,"c");
+   arr.splice(7,0,"d");
+    console.log(arr);
+  }
+  fun([1,2,3,4,5,6,7])  */
+
+
+//9
+/* function fun (arr) {
+    arr.splice(1,2,"two","three");
+    arr.splice(5,2,"six","seven");
+     console.log(arr);
+   }
+   fun([1,2,3,4,5,6,7]) */
+
+//10
+/* function fun(arr) {
+    arr.sort((a,b)=> a-b);
+    console.log(arr)
+}
+
+fun([3, 4, 1, 2, 7]); */
+
+//11
+/* function arrFromObjKeys (obj) {
+    let arr = [];
+    for(let key of Object.keys(obj)){
+        arr.push(key)
+    }
+    console.log(arr);
+}
+
+arrFromObjKeys({js:'test', jq: 'hello', css: 'world'}); */
+
+}
+
+{ //some
+
+//1
+/* function fun (str) {
+ let up = str[0].toUpperCase() + str.slice(1,(str.length-1))
+ console.log(up)
+}
+fun("abcde"); */
+
+
+/* function fun (str) {
+    let arr = str.split('');
+   arr[0] = arr[0].toUpperCase();
+    console.log(arr.join(''));
+   }
+   fun("abcde"); */
+
+//2
+/* function fun (str) {
+  let arr = str.split("");
+  console.log(arr.reverse().join(''))
+}
+fun('123456'); */
+
+
+//3
+function startStr(str,start) {
+    console.log(str.startsWith(start))
+}
+startStr("http://old.code.mu/","http://");
+
+function endStr(str,end) {
+    console.log(str.endsWith(end))
+}
+
+endStr("index.html",".html");
+}

@@ -347,213 +347,346 @@
 }
 
 {//String
-//1
-/* function cutString(str,length){
-  let result = str;
-    if(str.length > length){
-        result = str.substr(0,length)+"...";
-    }
- console.log(result)
-}
-
-cutString("я учу javascript!",5); */
-
-
-//2
-/* function replaceSymbol(str,from,to){
- let reg = new RegExp(`${from}`,"g")
-  console.log(str.replace(reg,to))
-}
-replaceSymbol('я учу javascript!'," ","-"); */
-
-//3
-/* function splitByWord(str){
-  console.log(str.split(" "));
-}
-splitByWord('я учу javascript!'); */
-
-//4
-/* function changeDateFormat(str){
-  let arr = str.split('-');
-  console.log(`${arr[2]}.${arr[1]}.${arr[0]}`)
-}
-
-
-changeDateFormat('2025-12-31'); */
-
-//4
-/* function fun (arr) {
-   
-    console.log( arr.join("+"));
-}
-
-fun(['я', 'учу', 'javascript', '!']) */
-
-
-//5
-/* function everyFirstToUpperCase (str) {
-    let arr = str.split("");
-    for(let i=0; i < arr.length;i++){
-        if(i == 0 || arr[i-1] == " "){
-          arr[i] = arr[i].toUpperCase();
+    //1
+    /* function cutString(str,length){
+      let result = str;
+        if(str.length > length){
+            result = str.substr(0,length)+"...";
         }
+     console.log(result)
     }
-    console.log(arr.join(""));
-}
-
-everyFirstToUpperCase('я учу javascript!'); */
+    
+    cutString("я учу javascript!",5); */
 
 
-//6
-/* function toCamelCase(str){
-  let arr = str.split("");
-  let st = "";
-  for(let i=0;i< arr.length;i++){
-      if(arr[i] == "_") {
-          st += arr[i+1].toUpperCase()
-      } else if(arr[i-1] == "_") {
-          continue
-      } else st += arr[i];
-  }
-  console.log(st)
-}
+    //2
+    /* function replaceSymbol(str,from,to){
+     let reg = new RegExp(`${from}`,"g")
+      console.log(str.replace(reg,to))
+    }
+    replaceSymbol('я учу javascript!'," ","-"); */
 
-toCamelCase('var_test_text'); */
+    //3
+    /* function splitByWord(str){
+      console.log(str.split(" "));
+    }
+    splitByWord('я учу javascript!'); */
+
+    //4
+    /* function changeDateFormat(str){
+      let arr = str.split('-');
+      console.log(`${arr[2]}.${arr[1]}.${arr[0]}`)
+    }
+    
+    
+    changeDateFormat('2025-12-31'); */
+
+    //4
+    /* function fun (arr) {
+       
+        console.log( arr.join("+"));
+    }
+    
+    fun(['я', 'учу', 'javascript', '!']) */
+
+
+    //5
+    /* function everyFirstToUpperCase (str) {
+        let arr = str.split("");
+        for(let i=0; i < arr.length;i++){
+            if(i == 0 || arr[i-1] == " "){
+              arr[i] = arr[i].toUpperCase();
+            }
+        }
+        console.log(arr.join(""));
+    }
+    
+    everyFirstToUpperCase('я учу javascript!'); */
+
+
+    //6
+    /* function toCamelCase(str){
+      let arr = str.split("");
+      let st = "";
+      for(let i=0;i< arr.length;i++){
+          if(arr[i] == "_") {
+              st += arr[i+1].toUpperCase()
+          } else if(arr[i-1] == "_") {
+              continue
+          } else st += arr[i];
+      }
+      console.log(st)
+    }
+    
+    toCamelCase('var_test_text'); */
 
 }
 
 {//Array
-  
-//1
-/* function newArrFromArrs (arr1,arr2) {
-    console.log(arr1.concat(arr2))
-}
 
-newArrFromArrs(['a', 'b', 'c'],[1, 2, 3]) */
-
-
-//2
-/* function unitArrays(arr1,arr2) {
-    for(let item of arr2){
-        arr1.push(item)
+    //1
+    /* function newArrFromArrs (arr1,arr2) {
+        console.log(arr1.concat(arr2))
     }
     
-    console.log(arr1)
-}
-
-unitArrays(['a', 'b', 'c'],[1, 2, 3]) */
-
-//3
-/* function fun (array,n) {
-    let arr = array.slice(0,n);
-    console.log(arr)
-}
-fun([1,2,3,4,5,6,7],3); */
-
-//4
-/* function fun (array,n) {
-    let arr = array.slice(-n);
-    console.log(arr);
-}
-fun([1,2,3,4,5,6,7],3);
- */
-
- //5
- /* function fun (arr) {
-   arr.splice(1,2);
-   console.log(arr);
- }
- fun([1,2,3,4,5,6,7]) */
+    newArrFromArrs(['a', 'b', 'c'],[1, 2, 3]) */
 
 
- //6
-/*  function fun (array) {
-   let arr = array.splice(1,3);
-   console.log(arr);
- }
- fun([1,2,3,4,5,6,7]) */
-
-
- //7
-/*  function fun (arr) {
-    arr.splice(2,0,"a","b","c");
-    console.log(arr);
-  }
-  fun([1,2,3,4,5,6,7])  */
-
-//8
- /*  function fun (arr) {
-   arr.splice(1,0,"a","b");
-   arr.splice(5,0,"c");
-   arr.splice(7,0,"d");
-    console.log(arr);
-  }
-  fun([1,2,3,4,5,6,7])  */
-
-
-//9
-/* function fun (arr) {
-    arr.splice(1,2,"two","three");
-    arr.splice(5,2,"six","seven");
-     console.log(arr);
-   }
-   fun([1,2,3,4,5,6,7]) */
-
-//10
-/* function fun(arr) {
-    arr.sort((a,b)=> a-b);
-    console.log(arr)
-}
-
-fun([3, 4, 1, 2, 7]); */
-
-//11
-/* function arrFromObjKeys (obj) {
-    let arr = [];
-    for(let key of Object.keys(obj)){
-        arr.push(key)
+    //2
+    /* function unitArrays(arr1,arr2) {
+        for(let item of arr2){
+            arr1.push(item)
+        }
+        
+        console.log(arr1)
     }
-    console.log(arr);
-}
+    
+    unitArrays(['a', 'b', 'c'],[1, 2, 3]) */
 
-arrFromObjKeys({js:'test', jq: 'hello', css: 'world'}); */
+    //3
+    /* function fun (array,n) {
+        let arr = array.slice(0,n);
+        console.log(arr)
+    }
+    fun([1,2,3,4,5,6,7],3); */
+
+    //4
+    /* function fun (array,n) {
+        let arr = array.slice(-n);
+        console.log(arr);
+    }
+    fun([1,2,3,4,5,6,7],3);
+     */
+
+    //5
+    /* function fun (arr) {
+      arr.splice(1,2);
+      console.log(arr);
+    }
+    fun([1,2,3,4,5,6,7]) */
+
+
+    //6
+    /*  function fun (array) {
+       let arr = array.splice(1,3);
+       console.log(arr);
+     }
+     fun([1,2,3,4,5,6,7]) */
+
+
+    //7
+    /*  function fun (arr) {
+        arr.splice(2,0,"a","b","c");
+        console.log(arr);
+      }
+      fun([1,2,3,4,5,6,7])  */
+
+    //8
+    /*  function fun (arr) {
+      arr.splice(1,0,"a","b");
+      arr.splice(5,0,"c");
+      arr.splice(7,0,"d");
+       console.log(arr);
+     }
+     fun([1,2,3,4,5,6,7])  */
+
+
+    //9
+    /* function fun (arr) {
+        arr.splice(1,2,"two","three");
+        arr.splice(5,2,"six","seven");
+         console.log(arr);
+       }
+       fun([1,2,3,4,5,6,7]) */
+
+    //10
+    /* function fun(arr) {
+        arr.sort((a,b)=> a-b);
+        console.log(arr)
+    }
+    
+    fun([3, 4, 1, 2, 7]); */
+
+    //11
+    /* function arrFromObjKeys (obj) {
+        let arr = [];
+        for(let key of Object.keys(obj)){
+            arr.push(key)
+        }
+        console.log(arr);
+    }
+    
+    arrFromObjKeys({js:'test', jq: 'hello', css: 'world'}); */
 
 }
 
 { //some
 
-//1
-/* function fun (str) {
- let up = str[0].toUpperCase() + str.slice(1,(str.length-1))
- console.log(up)
+    //1
+    /* function fun (str) {
+     let up = str[0].toUpperCase() + str.slice(1,(str.length-1))
+     console.log(up)
+    }
+    fun("abcde"); */
+
+
+    /* function fun (str) {
+        let arr = str.split('');
+       arr[0] = arr[0].toUpperCase();
+        console.log(arr.join(''));
+       }
+       fun("abcde"); */
+
+    //2
+    /* function fun (str) {
+      let arr = str.split("");
+      console.log(arr.reverse().join(''))
+    }
+    fun('123456'); */
+
+
+    //3
+    /* function startStr(str,start) {
+        console.log(str.startsWith(start))
+    }
+    startStr("http://old.code.mu/","http://");
+    
+    function endStr(str,end) {
+        console.log(str.endsWith(end))
+    }
+    
+    endStr("index.html",".html"); */
+
+    //4
+    /* function numPiramide() {
+        str = "1";
+    for(let i = 1; i<10;i++) {
+    str = ""+i;
+    console.log(str.repeat(i))}
+    }
+     numPiramide(); */
+
+
+    //5 
+    /*  function numPiramide2(){
+        str = "";
+        for(let i = 1; i<10;i++) {
+         str = ""+i;
+           for(let l = 1; l < i; l++){
+            str+=i;}
+        console.log(str)}
+     }
+     numPiramide2(); */
+
+
+    //6 
+    /* function piramide (){
+        let str = "xx";
+        for(let i = 0; i<5; i++){
+            console.log(str);
+            str += "xx";
+        }
+    }
+   
+   piramide(); */
+
+
+    //7
+    /* function count(){
+        let couter = 0;
+       return function() {
+         return  ++couter;}
+    }
+    let first = count();
+    first();
+    first(); */
+
+
+    //8 
+    /* function counter(){
+        counter.count = 0;
+        return function() {
+            return ++counter.count;
+        }
+    }
+    
+    let second = counter(); */
 }
-fun("abcde"); */
+
+{//Timeout
+
+    //1
+/*     function printNumbers(from, to) {
+
+        let timerId = setInterval(function f() {
+            if (from > to - 1) clearInterval(timerId);
+            console.log(from);
+            from++
+        }, 100)
+    }
+    printNumbers(1, 15); */
 
 
-/* function fun (str) {
-    let arr = str.split('');
-   arr[0] = arr[0].toUpperCase();
-    console.log(arr.join(''));
-   }
-   fun("abcde"); */
+    //2
+ /*    function printNumbers(from,to){
+       setTimeout(function f(){
+            if (from < to) setTimeout(f,100);
+            console.log(from);
+            from++;
+            
+        },100)
+    }
 
-//2
-/* function fun (str) {
-  let arr = str.split("");
-  console.log(arr.reverse().join(''))
+    printNumbers(1, 15); */
+   
 }
-fun('123456'); */
+
+{//call,apply
+
+ //1
+/*  function work(a, b) {
+    alert( a + b ); 
+  }
+
+  function spy(fun){
+     
+     function f (...args){
+          f.calls.push(args);
+          fun.apply(this,arguments);
+      }
+      f.calls = [];
+      return f
+  }
+
+work = spy(work);
+
+work(1,2);
+
+  for (let args of work.calls) {
+    alert( 'call:' + args.join() ); // "call:1,2", "call:4,5"
+  } */
 
 
-//3
-function startStr(str,start) {
-    console.log(str.startsWith(start))
+
+  //2
+
+function some (x){
+    alert(x)
 }
-startStr("http://old.code.mu/","http://");
 
-function endStr(str,end) {
-    console.log(str.endsWith(end))
+function delay (fun,ms){
+    return function f (){
+        return setTimeout(()=>fun.apply(this,arguments),ms)
+    }
 }
 
-endStr("index.html",".html");
+let some100 = delay(some,100);
+let some1000 = delay(some,10000);
+
+some100('test1');
+some1000('test2');
+
+
+debugger
+
 }

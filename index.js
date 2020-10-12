@@ -714,4 +714,66 @@ fun(5);
 setTimeout( () => fun(4), 1100) */
 
 
+//3(2)
+
+/* function some(x) {
+    alert(x);
+}
+
+
+function debounce2(func,ms) {
+   let notReady = false;
+
+   return function wrapper() {
+       if(notReady) return;
+       func.apply(this,arguments);
+       notReady = true;
+       setTimeout(() => notReady = false, ms)
+   }
+}
+
+
+let fun = debounce2(some,1000);
+
+fun(1);
+fun(2);
+setTimeout(()=>fun(4),1500); */
+
+//4
+
+function some(x) {
+    console.log(x);
+}
+
+
+function throttle(func,ms) {
+    let notReady = false;
+    let args,isThis;
+    
+    return function wrapper() {
+     if(notReady) {
+         args = arguments;
+         isThis = this;
+         return;
+     }
+
+     func.apply(this,arguments);
+     notReady = true;
+     setTimeout(function() {
+          notReady = false;
+          if(args) {
+              wrapper.apply(isThis,args);
+         args = null;
+         isThis = null;
+          }
+     }, ms)
+    }
+ }
+
+let f1000 = throttle(some, 1000);
+
+
+f1000(1); // показывает 1
+f1000(2); // (ограничение, 1000 мс ещё нет)
+f1000(3);
 }

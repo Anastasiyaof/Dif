@@ -670,12 +670,12 @@ work(1,2);
 
   //2
 
-function some (x){
+/* function some (x){
     alert(x)
 }
 
-function delay (fun,ms){
-    return function f (){
+function delay(fun,ms) {
+    return function f() {
         return setTimeout(()=>fun.apply(this,arguments),ms)
     }
 }
@@ -684,9 +684,34 @@ let some100 = delay(some,100);
 let some1000 = delay(some,10000);
 
 some100('test1');
-some1000('test2');
+some1000('test2'); */
 
 
-debugger
+
+
+//3
+/* function some(x) {
+    alert(x)
+}
+
+function debounce(func,ms) {
+    let time = 0;
+   return function wrapper() {
+       let t = Date.now() - time;
+       if( t > ms) {
+           func.apply(this,arguments)
+       }
+       time = Date.now();
+   }
+   
+}
+
+let fun = debounce(some,1000);
+
+fun(2);
+fun(5);
+
+setTimeout( () => fun(4), 1100) */
+
 
 }

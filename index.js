@@ -741,7 +741,7 @@ setTimeout(()=>fun(4),1500); */
 
 //4
 
-function some(x) {
+/* function some(x) {
     console.log(x);
 }
 
@@ -775,5 +775,53 @@ let f1000 = throttle(some, 1000);
 
 f1000(1); // показывает 1
 f1000(2); // (ограничение, 1000 мс ещё нет)
-f1000(3);
+f1000(3); */
+}
+
+{//prototype
+ 
+//1
+/* let head = {
+    glasses: 1
+  };
+  
+  let table = {
+    pen: 3,
+    __proto__: head,
+  };
+  
+  let bed = {
+    sheet: 1,
+    pillow: 2,
+    __proto__: table,
+  };
+  
+  let pockets = {
+    money: 2000,
+    __proto__: bed,
+  };
+
+console.log(pockets.pen);
+console.log(bed.glasses); */
+
+
+//2
+/* function some(fun){
+return function wrap (ms) {
+    return function(...args) {
+      setTimeout(() => fun.apply(this, args), ms);
+    }
+  };
+  
+}
+
+function f(a, b) {
+    alert( a + b );
+  }
+
+let defer = some(f);
+
+  defer(1000)(1, 2); */
+
+
 }

@@ -823,5 +823,36 @@ let defer = some(f);
 
   defer(1000)(1, 2); */
 
+//3
+/* let head = {
+    glasses: 1
+  };
+  
+
+  let table = Object.create(head, {
+      pen: {
+          value: 3,
+      }
+  });
+  
+  let bed = Object.create(table,{
+      sheet: {
+          value:1,
+      },
+      pillow: {
+          value: 2,
+      }
+  });
+  
+  
+  let pockets = Object.create(bed, {
+      money: {
+          value:2000,
+      }
+  });
+
+console.log(pockets.pen);
+console.log(bed.glasses); */
+
 
 }

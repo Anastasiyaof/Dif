@@ -854,5 +854,30 @@ let defer = some(f);
 console.log(pockets.pen);
 console.log(bed.glasses); */
 
+//4
 
+/* let dictionary = Object.create(null);
+
+dictionary.toString = function () {
+    return Object.keys(this).join(',')
+}
+ 
+Object.defineProperty(dictionary,"toString",{
+    enumerable: false
+})
+
+
+
+dictionary.apple = "Apple";
+dictionary.__proto__ = "test";
+
+let result = dictionary.toString();
+for(let key in dictionary) {
+    alert(key); // "apple", затем "__proto__"
+  }
+ */
+
+
+
+ 
 }

@@ -884,7 +884,7 @@ for(let key in dictionary) {
 //1
 
 class Clock {
-    constructor ({template}) {
+    constructor (template) {
        this.template = template;
     }
 
@@ -919,8 +919,24 @@ class Clock {
 }
 
 
-let clock = new Clock({template: 'h:m:s'});
-clock.start();
+let clock = new Clock('h:m:s');
+//clock.start();
+
+class ExtendedClock extends Clock {
+    constructor (template,precision=1000) {
+        super(template);
+        this.precision = precision;
+    }
+    start() {
+        super.render();
+        this.timer = setInterval(() => super.render(),this.precision)
+    }
+}
+
+let clock2 = new ExtendedClock('h:m:s',3000);
+clock2.start();
+
+
 
 
 

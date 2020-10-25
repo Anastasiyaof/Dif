@@ -883,7 +883,7 @@ for(let key in dictionary) {
 
 //1
 
-class Clock {
+/* class Clock {
     constructor (template) {
        this.template = template;
     }
@@ -922,6 +922,7 @@ class Clock {
 let clock = new Clock('h:m:s');
 //clock.start();
 
+//2
 class ExtendedClock extends Clock {
     constructor (template,precision=1000) {
         super(template);
@@ -934,10 +935,49 @@ class ExtendedClock extends Clock {
 }
 
 let clock2 = new ExtendedClock('h:m:s',3000);
-clock2.start();
+clock2.start(); */
+
+//3.1
+
+/* class Worker {
+    constructor(name,surname,rate,days) {
+        this.name = name;
+        this.surname = surname;
+        this.rate = rate;
+        this.days = days;
+    }
+
+    getSalary() {
+        return this.rate * this.days
+    }
+}
+
+let worker1 = new Worker('Иван', 'Иванов', 10, 31);
+console.log(worker1.name);
+console.log(worker1.surname);
+console.log(worker1.getSalary());
+ */
 
 
+ //3.2
+ class Worker {
+    constructor(name,surname,rate,days) {
+        this.name = name;
+        this.surname = surname;
+        this.rate = rate;
+        this.days = days;
+    }
 
+    get salary() {
+        this._salary =  this.rate * this.days
+        return this._salary
+    }
+}
+
+let worker1 = new Worker('Иван', 'Иванов', 10, 31);
+console.log(worker1.name);
+console.log(worker1.surname);
+console.log(worker1.salary);
 
 
 }

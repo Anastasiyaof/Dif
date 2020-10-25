@@ -980,7 +980,7 @@ console.log(worker1.surname);
 console.log(worker1.salary);
  */
 
-//3.3
+/* //3.3
 class Worker {
     #name;
     #surname;
@@ -1020,7 +1020,40 @@ console.log(worker1.getSalary());
 worker1.setDays(28);
 worker1.setRate(15);
 console.log(worker1.getSalary());
-console.log(worker1);
+console.log(worker1); */
+
+
+//4
+
+class MyString {
+    reverse(str) {
+        let reversed = "";
+        for(let i= str.length-1; i > -1;i--){
+            reversed += str[i]
+        }
+        return reversed
+    } 
+
+    ucFirst(str) {
+       let first = str[0].toUpperCase();
+      return first + str.slice(1)
+    }
+
+    ucWords(str) {
+        let arr = str.split(" ");
+        arr.forEach((elem,index) => {
+           arr[index] =  this.ucFirst(elem)
+        });
+       return arr.join(' ')
+    }
+
+
+}
+
+let str = new MyString();
+console.log(str.reverse("abcd"));
+console.log(str.ucFirst("abcd"));
+console.log(str.ucWords("abcd abcd abcd"));
 
 }
 

@@ -960,7 +960,7 @@ console.log(worker1.getSalary());
 
 
  //3.2
- class Worker {
+ /* class Worker {
     constructor(name,surname,rate,days) {
         this.name = name;
         this.surname = surname;
@@ -978,7 +978,49 @@ let worker1 = new Worker('Иван', 'Иванов', 10, 31);
 console.log(worker1.name);
 console.log(worker1.surname);
 console.log(worker1.salary);
+ */
 
+//3.3
+class Worker {
+    #name;
+    #surname;
+    #rate;
+    #days;
+    constructor(name,surname,rate,days) {
+        this.#name = name;
+        this.#surname = surname;
+        this.#rate = rate;
+        this.#days = days;
+    }
+
+    getName() {
+        return  this.#name
+       
+    }
+    getSurname() {
+        return  this.#surname
+       
+    }
+    getSalary() {
+        return  this.#rate * this.#days
+       
+    }
+    setRate(value) {
+        return this.#rate = value
+    }
+    setDays(value) {
+        return this.#days = value
+    }
+}
+
+let worker1 = new Worker('Иван', 'Иванов', 10, 31);
+console.log(worker1.getName());
+console.log(worker1.getSurname());
+console.log(worker1.getSalary());
+worker1.setDays(28);
+worker1.setRate(15);
+console.log(worker1.getSalary());
+console.log(worker1);
 
 }
 

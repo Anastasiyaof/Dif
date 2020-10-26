@@ -1056,7 +1056,7 @@
     console.log(str.ucWords("abcd abcd abcd")); */
 
 
-    //5
+/*     //5
 
     class Validator {
         isEmail(str) {
@@ -1084,6 +1084,38 @@
 console.log(validator.isEmail('phphtml@mail.ru'));
 console.log(validator.isDomain('phphtml.net'));
 console.log(validator.isDate('12.05.2020'));
-console.log(validator.isPhone('+38 (029) 817-68-92'));
+console.log(validator.isPhone('+38 (029) 817-68-92')); */
+
+//6
+
+class User{
+    constructor(name,surname) {
+        this.name = name;
+        this.surname = surname;
+    }
+
+    getFullName() {
+        return this.name + " " + this.surname
+    }
+}
+
+class Student extends User {
+    constructor(name,surname,year){
+        super(name,surname);
+        this.year = year;
+    }
+
+    getCourse() {
+        return new Date().getFullYear() - this.year
+    }
+}
+
+let student = new Student('Иван', 'Иванов', 2017);
+
+console.log(student.name); 
+console.log(student.surname); 
+console.log(student.getFullName()); 
+console.log(student.year); 
+console.log(student.getCourse())
 
 }

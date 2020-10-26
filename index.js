@@ -616,445 +616,474 @@
 {//Timeout
 
     //1
-/*     function printNumbers(from, to) {
-
-        let timerId = setInterval(function f() {
-            if (from > to - 1) clearInterval(timerId);
-            console.log(from);
-            from++
-        }, 100)
-    }
-    printNumbers(1, 15); */
+    /*     function printNumbers(from, to) {
+    
+            let timerId = setInterval(function f() {
+                if (from > to - 1) clearInterval(timerId);
+                console.log(from);
+                from++
+            }, 100)
+        }
+        printNumbers(1, 15); */
 
 
     //2
- /*    function printNumbers(from,to){
-       setTimeout(function f(){
-            if (from < to) setTimeout(f,100);
-            console.log(from);
-            from++;
-            
-        },100)
-    }
-
-    printNumbers(1, 15); */
+    /*    function printNumbers(from,to){
+          setTimeout(function f(){
+               if (from < to) setTimeout(f,100);
+               console.log(from);
+               from++;
+               
+           },100)
+       }
    
+       printNumbers(1, 15); */
+
 }
 
 {//call,apply
 
- //1
-/*  function work(a, b) {
-    alert( a + b ); 
-  }
-
-  function spy(fun){
-     
-     function f (...args){
-          f.calls.push(args);
-          fun.apply(this,arguments);
+    //1
+    /*  function work(a, b) {
+        alert( a + b ); 
       }
-      f.calls = [];
-      return f
-  }
-
-work = spy(work);
-
-work(1,2);
-
-  for (let args of work.calls) {
-    alert( 'call:' + args.join() ); // "call:1,2", "call:4,5"
-  } */
-
-
-
-  //2
-
-/* function some (x){
-    alert(x)
-}
-
-function delay(fun,ms) {
-    return function f() {
-        return setTimeout(()=>fun.apply(this,arguments),ms)
-    }
-}
-
-let some100 = delay(some,100);
-let some1000 = delay(some,10000);
-
-some100('test1');
-some1000('test2'); */
-
-
-
-
-//3
-/* function some(x) {
-    alert(x)
-}
-
-function debounce(func,ms) {
-    let time = 0;
-   return function wrapper() {
-       let t = Date.now() - time;
-       if( t > ms) {
-           func.apply(this,arguments)
-       }
-       time = Date.now();
-   }
-   
-}
-
-let fun = debounce(some,1000);
-
-fun(2);
-fun(5);
-
-setTimeout( () => fun(4), 1100) */
-
-
-//3(2)
-
-/* function some(x) {
-    alert(x);
-}
-
-
-function debounce2(func,ms) {
-   let notReady = false;
-
-   return function wrapper() {
-       if(notReady) return;
-       func.apply(this,arguments);
-       notReady = true;
-       setTimeout(() => notReady = false, ms)
-   }
-}
-
-
-let fun = debounce2(some,1000);
-
-fun(1);
-fun(2);
-setTimeout(()=>fun(4),1500); */
-
-//4
-
-/* function some(x) {
-    console.log(x);
-}
-
-
-function throttle(func,ms) {
-    let notReady = false;
-    let args,isThis;
     
-    return function wrapper() {
-     if(notReady) {
-         args = arguments;
-         isThis = this;
-         return;
-     }
-
-     func.apply(this,arguments);
-     notReady = true;
-     setTimeout(function() {
-          notReady = false;
-          if(args) {
-              wrapper.apply(isThis,args);
-         args = null;
-         isThis = null;
+      function spy(fun){
+         
+         function f (...args){
+              f.calls.push(args);
+              fun.apply(this,arguments);
           }
-     }, ms)
+          f.calls = [];
+          return f
+      }
+    
+    work = spy(work);
+    
+    work(1,2);
+    
+      for (let args of work.calls) {
+        alert( 'call:' + args.join() ); // "call:1,2", "call:4,5"
+      } */
+
+
+
+    //2
+
+    /* function some (x){
+        alert(x)
     }
- }
+    
+    function delay(fun,ms) {
+        return function f() {
+            return setTimeout(()=>fun.apply(this,arguments),ms)
+        }
+    }
+    
+    let some100 = delay(some,100);
+    let some1000 = delay(some,10000);
+    
+    some100('test1');
+    some1000('test2'); */
 
-let f1000 = throttle(some, 1000);
 
 
-f1000(1); // показывает 1
-f1000(2); // (ограничение, 1000 мс ещё нет)
-f1000(3); */
+
+    //3
+    /* function some(x) {
+        alert(x)
+    }
+    
+    function debounce(func,ms) {
+        let time = 0;
+       return function wrapper() {
+           let t = Date.now() - time;
+           if( t > ms) {
+               func.apply(this,arguments)
+           }
+           time = Date.now();
+       }
+       
+    }
+    
+    let fun = debounce(some,1000);
+    
+    fun(2);
+    fun(5);
+    
+    setTimeout( () => fun(4), 1100) */
+
+
+    //3(2)
+
+    /* function some(x) {
+        alert(x);
+    }
+    
+    
+    function debounce2(func,ms) {
+       let notReady = false;
+    
+       return function wrapper() {
+           if(notReady) return;
+           func.apply(this,arguments);
+           notReady = true;
+           setTimeout(() => notReady = false, ms)
+       }
+    }
+    
+    
+    let fun = debounce2(some,1000);
+    
+    fun(1);
+    fun(2);
+    setTimeout(()=>fun(4),1500); */
+
+    //4
+
+    /* function some(x) {
+        console.log(x);
+    }
+    
+    
+    function throttle(func,ms) {
+        let notReady = false;
+        let args,isThis;
+        
+        return function wrapper() {
+         if(notReady) {
+             args = arguments;
+             isThis = this;
+             return;
+         }
+    
+         func.apply(this,arguments);
+         notReady = true;
+         setTimeout(function() {
+              notReady = false;
+              if(args) {
+                  wrapper.apply(isThis,args);
+             args = null;
+             isThis = null;
+              }
+         }, ms)
+        }
+     }
+    
+    let f1000 = throttle(some, 1000);
+    
+    
+    f1000(1); // показывает 1
+    f1000(2); // (ограничение, 1000 мс ещё нет)
+    f1000(3); */
 }
 
 {//prototype
- 
-//1
-/* let head = {
-    glasses: 1
-  };
-  
-  let table = {
-    pen: 3,
-    __proto__: head,
-  };
-  
-  let bed = {
-    sheet: 1,
-    pillow: 2,
-    __proto__: table,
-  };
-  
-  let pockets = {
-    money: 2000,
-    __proto__: bed,
-  };
 
-console.log(pockets.pen);
-console.log(bed.glasses); */
+    //1
+    /* let head = {
+        glasses: 1
+      };
+      
+      let table = {
+        pen: 3,
+        __proto__: head,
+      };
+      
+      let bed = {
+        sheet: 1,
+        pillow: 2,
+        __proto__: table,
+      };
+      
+      let pockets = {
+        money: 2000,
+        __proto__: bed,
+      };
+    
+    console.log(pockets.pen);
+    console.log(bed.glasses); */
 
 
-//2
-/* function some(fun){
-return function wrap (ms) {
-    return function(...args) {
-      setTimeout(() => fun.apply(this, args), ms);
+    //2
+    /* function some(fun){
+    return function wrap (ms) {
+        return function(...args) {
+          setTimeout(() => fun.apply(this, args), ms);
+        }
+      };
+      
     }
-  };
-  
-}
-
-function f(a, b) {
-    alert( a + b );
-  }
-
-let defer = some(f);
-
-  defer(1000)(1, 2); */
-
-//3
-/* let head = {
-    glasses: 1
-  };
-  
-
-  let table = Object.create(head, {
-      pen: {
-          value: 3,
+    
+    function f(a, b) {
+        alert( a + b );
       }
-  });
-  
-  let bed = Object.create(table,{
-      sheet: {
-          value:1,
-      },
-      pillow: {
-          value: 2,
+    
+    let defer = some(f);
+    
+      defer(1000)(1, 2); */
+
+    //3
+    /* let head = {
+        glasses: 1
+      };
+      
+    
+      let table = Object.create(head, {
+          pen: {
+              value: 3,
+          }
+      });
+      
+      let bed = Object.create(table,{
+          sheet: {
+              value:1,
+          },
+          pillow: {
+              value: 2,
+          }
+      });
+      
+      
+      let pockets = Object.create(bed, {
+          money: {
+              value:2000,
+          }
+      });
+    
+    console.log(pockets.pen);
+    console.log(bed.glasses); */
+
+    //4
+
+    /* let dictionary = Object.create(null);
+    
+    dictionary.toString = function () {
+        return Object.keys(this).join(',')
+    }
+     
+    Object.defineProperty(dictionary,"toString",{
+        enumerable: false
+    })
+    
+    
+    
+    dictionary.apple = "Apple";
+    dictionary.__proto__ = "test";
+    
+    let result = dictionary.toString();
+    for(let key in dictionary) {
+        alert(key); // "apple", затем "__proto__"
       }
-  });
-  
-  
-  let pockets = Object.create(bed, {
-      money: {
-          value:2000,
-      }
-  });
-
-console.log(pockets.pen);
-console.log(bed.glasses); */
-
-//4
-
-/* let dictionary = Object.create(null);
-
-dictionary.toString = function () {
-    return Object.keys(this).join(',')
-}
- 
-Object.defineProperty(dictionary,"toString",{
-    enumerable: false
-})
-
-
-
-dictionary.apple = "Apple";
-dictionary.__proto__ = "test";
-
-let result = dictionary.toString();
-for(let key in dictionary) {
-    alert(key); // "apple", затем "__proto__"
-  }
- */
+     */
 
 }
 
 {//Class
 
-//1
+    //1
 
-/* class Clock {
-    constructor (template) {
-       this.template = template;
-    }
-
-    render() {
-        let date = new Date();
-    
-        let hours = date.getHours();
-        if (hours < 10) hours = '0' + hours;
-    
-        let mins = date.getMinutes();
-        if (mins < 10) mins = '0' + mins;
-    
-        let secs = date.getSeconds();
-        if (secs < 10) secs = '0' + secs;
-    
-        let output = this.template
-          .replace('h', hours)
-          .replace('m', mins)
-          .replace('s', secs);
-    
-        console.log(output);
-      }
-
-    stop() {
-        clearInterval(this.timer);
-    }
-    
-    start() {
-        this.render();
-        this.timer = setInterval(() => this.render(), 1000);
-    }
-}
-
-
-let clock = new Clock('h:m:s');
-//clock.start();
-
-//2
-class ExtendedClock extends Clock {
-    constructor (template,precision=1000) {
-        super(template);
-        this.precision = precision;
-    }
-    start() {
-        super.render();
-        this.timer = setInterval(() => super.render(),this.precision)
-    }
-}
-
-let clock2 = new ExtendedClock('h:m:s',3000);
-clock2.start(); */
-
-//3.1
-
-/* class Worker {
-    constructor(name,surname,rate,days) {
-        this.name = name;
-        this.surname = surname;
-        this.rate = rate;
-        this.days = days;
-    }
-
-    getSalary() {
-        return this.rate * this.days
-    }
-}
-
-let worker1 = new Worker('Иван', 'Иванов', 10, 31);
-console.log(worker1.name);
-console.log(worker1.surname);
-console.log(worker1.getSalary());
- */
-
-
- //3.2
- /* class Worker {
-    constructor(name,surname,rate,days) {
-        this.name = name;
-        this.surname = surname;
-        this.rate = rate;
-        this.days = days;
-    }
-
-    get salary() {
-        this._salary =  this.rate * this.days
-        return this._salary
-    }
-}
-
-let worker1 = new Worker('Иван', 'Иванов', 10, 31);
-console.log(worker1.name);
-console.log(worker1.surname);
-console.log(worker1.salary);
- */
-
-/* //3.3
-class Worker {
-    #name;
-    #surname;
-    #rate;
-    #days;
-    constructor(name,surname,rate,days) {
-        this.#name = name;
-        this.#surname = surname;
-        this.#rate = rate;
-        this.#days = days;
-    }
-
-    getName() {
-        return  this.#name
-       
-    }
-    getSurname() {
-        return  this.#surname
-       
-    }
-    getSalary() {
-        return  this.#rate * this.#days
-       
-    }
-    setRate(value) {
-        return this.#rate = value
-    }
-    setDays(value) {
-        return this.#days = value
-    }
-}
-
-let worker1 = new Worker('Иван', 'Иванов', 10, 31);
-console.log(worker1.getName());
-console.log(worker1.getSurname());
-console.log(worker1.getSalary());
-worker1.setDays(28);
-worker1.setRate(15);
-console.log(worker1.getSalary());
-console.log(worker1); */
-
-
-//4
-
-class MyString {
-    reverse(str) {
-        let reversed = "";
-        for(let i= str.length-1; i > -1;i--){
-            reversed += str[i]
+    /* class Clock {
+        constructor (template) {
+           this.template = template;
         }
-        return reversed
-    } 
+    
+        render() {
+            let date = new Date();
+        
+            let hours = date.getHours();
+            if (hours < 10) hours = '0' + hours;
+        
+            let mins = date.getMinutes();
+            if (mins < 10) mins = '0' + mins;
+        
+            let secs = date.getSeconds();
+            if (secs < 10) secs = '0' + secs;
+        
+            let output = this.template
+              .replace('h', hours)
+              .replace('m', mins)
+              .replace('s', secs);
+        
+            console.log(output);
+          }
+    
+        stop() {
+            clearInterval(this.timer);
+        }
+        
+        start() {
+            this.render();
+            this.timer = setInterval(() => this.render(), 1000);
+        }
+    }
+    
+    
+    let clock = new Clock('h:m:s');
+    //clock.start();
+    
+    //2
+    class ExtendedClock extends Clock {
+        constructor (template,precision=1000) {
+            super(template);
+            this.precision = precision;
+        }
+        start() {
+            super.render();
+            this.timer = setInterval(() => super.render(),this.precision)
+        }
+    }
+    
+    let clock2 = new ExtendedClock('h:m:s',3000);
+    clock2.start(); */
 
-    ucFirst(str) {
-       let first = str[0].toUpperCase();
-      return first + str.slice(1)
+    //3.1
+
+    /* class Worker {
+        constructor(name,surname,rate,days) {
+            this.name = name;
+            this.surname = surname;
+            this.rate = rate;
+            this.days = days;
+        }
+    
+        getSalary() {
+            return this.rate * this.days
+        }
+    }
+    
+    let worker1 = new Worker('Иван', 'Иванов', 10, 31);
+    console.log(worker1.name);
+    console.log(worker1.surname);
+    console.log(worker1.getSalary());
+     */
+
+
+    //3.2
+    /* class Worker {
+       constructor(name,surname,rate,days) {
+           this.name = name;
+           this.surname = surname;
+           this.rate = rate;
+           this.days = days;
+       }
+   
+       get salary() {
+           this._salary =  this.rate * this.days
+           return this._salary
+       }
+   }
+   
+   let worker1 = new Worker('Иван', 'Иванов', 10, 31);
+   console.log(worker1.name);
+   console.log(worker1.surname);
+   console.log(worker1.salary);
+    */
+
+    /* //3.3
+    class Worker {
+        #name;
+        #surname;
+        #rate;
+        #days;
+        constructor(name,surname,rate,days) {
+            this.#name = name;
+            this.#surname = surname;
+            this.#rate = rate;
+            this.#days = days;
+        }
+    
+        getName() {
+            return  this.#name
+           
+        }
+        getSurname() {
+            return  this.#surname
+           
+        }
+        getSalary() {
+            return  this.#rate * this.#days
+           
+        }
+        setRate(value) {
+            return this.#rate = value
+        }
+        setDays(value) {
+            return this.#days = value
+        }
+    }
+    
+    let worker1 = new Worker('Иван', 'Иванов', 10, 31);
+    console.log(worker1.getName());
+    console.log(worker1.getSurname());
+    console.log(worker1.getSalary());
+    worker1.setDays(28);
+    worker1.setRate(15);
+    console.log(worker1.getSalary());
+    console.log(worker1); */
+
+
+    //4
+
+    /* class MyString {
+        reverse(str) {
+            let reversed = "";
+            for(let i= str.length-1; i > -1;i--){
+                reversed += str[i]
+            }
+            return reversed
+        } 
+    
+        ucFirst(str) {
+           let first = str[0].toUpperCase();
+          return first + str.slice(1)
+        }
+    
+        ucWords(str) {
+            let arr = str.split(" ");
+            arr.forEach((elem,index) => {
+               arr[index] =  this.ucFirst(elem)
+            });
+           return arr.join(' ')
+        }
+    
+    
+    }
+    
+    let str = new MyString();
+    console.log(str.reverse("abcd"));
+    console.log(str.ucFirst("abcd"));
+    console.log(str.ucWords("abcd abcd abcd")); */
+
+
+    //5
+
+    class Validator {
+        isEmail(str) {
+            return str.match(/[-.\w]+@([-\w]+\.)+\w+/) !== null
+        }
+
+        isDomain(str) {
+            return str.match(/([-\w]+\.)+\w+/) !== null
+        }
+
+        isDate(str) {
+            return str.match(/(\d\d.){2}\d{2,4}/) !== null
+        }
+
+        isPhone(str) {
+            return str.match(/^(\+38)?[ -]?\(?0\d{2}\)?[ -]?\d{3}[ -]?\d{2}[ -]?\d{2}$/) !== null
+        }
+
     }
 
-    ucWords(str) {
-        let arr = str.split(" ");
-        arr.forEach((elem,index) => {
-           arr[index] =  this.ucFirst(elem)
-        });
-       return arr.join(' ')
-    }
+    let validator = new Validator();
 
+    
 
-}
-
-let str = new MyString();
-console.log(str.reverse("abcd"));
-console.log(str.ucFirst("abcd"));
-console.log(str.ucWords("abcd abcd abcd"));
+console.log(validator.isEmail('phphtml@mail.ru'));
+console.log(validator.isDomain('phphtml.net'));
+console.log(validator.isDate('12.05.2020'));
+console.log(validator.isPhone('+38 (029) 817-68-92'));
 
 }
-
-

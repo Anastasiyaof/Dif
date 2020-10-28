@@ -1137,12 +1137,31 @@ console.log(student.getCourse())
 delay(3000).then(() => alert('выполнилось через 3 секунды')); */
 
 //1.1
-
-function delay(ms) {
+/* function delay(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
 }
 
 
-delay(3000).then(() => alert('выполнилось через 3 секунды'));
+delay(3000).then(() => alert('выполнилось через 3 секунды')); */
+
+
+//2
+
+function randomResult () {
+    return new Promise(function(resolve,reject){
+         try {
+            let num =Math.round(Math.random()*10);
+            if(num < 5) {
+              throw  new ReferenceError("Ошбка! Значение больше допустимого")
+            }
+        resolve("Greate")
+         } catch (err) {
+             reject(err.message);
+         }
+    })
+}
+
+randomResult().then(alert,alert)
+
 
 }

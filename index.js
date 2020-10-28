@@ -1149,7 +1149,7 @@ delay(3000).then(() => alert('выполнилось через 3 секунды
 
 function randomResult () {
     return new Promise(function(resolve,reject){
-         try {
+        setTimeout( function () { try {
             let num =Math.round(Math.random()*10);
             if(num < 5) {
               throw  new ReferenceError("Ошбка! Значение больше допустимого")
@@ -1158,10 +1158,10 @@ function randomResult () {
          } catch (err) {
              reject(err.message);
          }
-    })
-}
+    },5000)
+})}
 
-randomResult().then(alert,alert)
+randomResult().then(alert,alert);
 
 
 }

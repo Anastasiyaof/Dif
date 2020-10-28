@@ -1088,7 +1088,7 @@ console.log(validator.isPhone('+38 (029) 817-68-92')); */
 
 //6
 
-class User{
+/* class User{
     constructor(name,surname) {
         this.name = name;
         this.surname = surname;
@@ -1117,5 +1117,32 @@ console.log(student.surname);
 console.log(student.getFullName()); 
 console.log(student.year); 
 console.log(student.getCourse())
+ */
+}
+
+{ //Promise
+
+//1
+   /*  function delay(ms) {
+      return new Promise(function(resolve,reject){
+         let start = Date.now();
+         let count = Date.now();
+         while(count - start != ms){
+             count = Date.now();
+         }
+         resolve();
+      })
+    }
+
+delay(3000).then(() => alert('выполнилось через 3 секунды')); */
+
+//1.1
+
+function delay(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+
+delay(3000).then(() => alert('выполнилось через 3 секунды'));
 
 }

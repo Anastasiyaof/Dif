@@ -1056,112 +1056,148 @@
     console.log(str.ucWords("abcd abcd abcd")); */
 
 
-/*     //5
-
-    class Validator {
-        isEmail(str) {
-            return str.match(/[-.\w]+@([-\w]+\.)+\w+/) !== null
-        }
-
-        isDomain(str) {
-            return str.match(/([-\w]+\.)+\w+/) !== null
-        }
-
-        isDate(str) {
-            return str.match(/(\d\d.){2}\d{2,4}/) !== null
-        }
-
-        isPhone(str) {
-            return str.match(/^(\+38)?[ -]?\(?0\d{2}\)?[ -]?\d{3}[ -]?\d{2}[ -]?\d{2}$/) !== null
-        }
-
-    }
-
-    let validator = new Validator();
-
+    /*     //5
     
+        class Validator {
+            isEmail(str) {
+                return str.match(/[-.\w]+@([-\w]+\.)+\w+/) !== null
+            }
+    
+            isDomain(str) {
+                return str.match(/([-\w]+\.)+\w+/) !== null
+            }
+    
+            isDate(str) {
+                return str.match(/(\d\d.){2}\d{2,4}/) !== null
+            }
+    
+            isPhone(str) {
+                return str.match(/^(\+38)?[ -]?\(?0\d{2}\)?[ -]?\d{3}[ -]?\d{2}[ -]?\d{2}$/) !== null
+            }
+    
+        }
+    
+        let validator = new Validator();
+    
+        
+    
+    console.log(validator.isEmail('phphtml@mail.ru'));
+    console.log(validator.isDomain('phphtml.net'));
+    console.log(validator.isDate('12.05.2020'));
+    console.log(validator.isPhone('+38 (029) 817-68-92')); */
 
-console.log(validator.isEmail('phphtml@mail.ru'));
-console.log(validator.isDomain('phphtml.net'));
-console.log(validator.isDate('12.05.2020'));
-console.log(validator.isPhone('+38 (029) 817-68-92')); */
+    //6
 
-//6
-
-/* class User{
-    constructor(name,surname) {
-        this.name = name;
-        this.surname = surname;
+    /* class User{
+        constructor(name,surname) {
+            this.name = name;
+            this.surname = surname;
+        }
+    
+        getFullName() {
+            return this.name + " " + this.surname
+        }
     }
-
-    getFullName() {
-        return this.name + " " + this.surname
+    
+    class Student extends User {
+        constructor(name,surname,year){
+            super(name,surname);
+            this.year = year;
+        }
+    
+        getCourse() {
+            return new Date().getFullYear() - this.year
+        }
     }
-}
-
-class Student extends User {
-    constructor(name,surname,year){
-        super(name,surname);
-        this.year = year;
-    }
-
-    getCourse() {
-        return new Date().getFullYear() - this.year
-    }
-}
-
-let student = new Student('Иван', 'Иванов', 2017);
-
-console.log(student.name); 
-console.log(student.surname); 
-console.log(student.getFullName()); 
-console.log(student.year); 
-console.log(student.getCourse())
- */
+    
+    let student = new Student('Иван', 'Иванов', 2017);
+    
+    console.log(student.name); 
+    console.log(student.surname); 
+    console.log(student.getFullName()); 
+    console.log(student.year); 
+    console.log(student.getCourse())
+     */
 }
 
 { //Promise
 
-//1
-   /*  function delay(ms) {
-      return new Promise(function(resolve,reject){
-         let start = Date.now();
-         let count = Date.now();
-         while(count - start != ms){
-             count = Date.now();
-         }
-         resolve();
-      })
+    //1
+    /*  function delay(ms) {
+       return new Promise(function(resolve,reject){
+          let start = Date.now();
+          let count = Date.now();
+          while(count - start != ms){
+              count = Date.now();
+          }
+          resolve();
+       })
+     }
+ 
+ delay(3000).then(() => alert('выполнилось через 3 секунды')); */
+
+    //1.1
+    /* function delay(ms) {
+        return new Promise(resolve => setTimeout(resolve, ms));
+    }
+    
+    
+    delay(3000).then(() => alert('выполнилось через 3 секунды')); */
+
+
+    //2
+    /* 
+    function randomResult () {
+        return new Promise(function(resolve,reject){
+            setTimeout( function () { try {
+                let num =Math.round(Math.random()*10);
+                if(num < 5) {
+                  throw  new ReferenceError("Ошбка! Значение больше допустимого")
+                }
+            resolve("Greate")
+             } catch (err) {
+                 reject(err.message);
+             }
+        },5000)
+    })}
+    
+    randomResult().then(alert,alert); */
+
+    //3
+    const wring_out_time = 500;
+    const SQUATING_TIME = 200;
+
+    function wringOut(count) {
+        return new Promise((resolve, reject) => {
+            if (count > 100) {
+                reject(new Error("Слтишком много отжиманий"));
+            }
+            setTimeout(() => resolve(count), count * wring_out_time)
+        })
     }
 
-delay(3000).then(() => alert('выполнилось через 3 секунды')); */
-
-//1.1
-/* function delay(ms) {
-    return new Promise(resolve => setTimeout(resolve, ms));
-}
-
-
-delay(3000).then(() => alert('выполнилось через 3 секунды')); */
-
-
-//2
-
-function randomResult () {
-    return new Promise(function(resolve,reject){
-        setTimeout( function () { try {
-            let num =Math.round(Math.random()*10);
-            if(num < 5) {
-              throw  new ReferenceError("Ошбка! Значение больше допустимого")
+    function squating(count) {
+        return new Promise((resolve, reject) => {
+            if (count > 100) {
+                reject(new Error("Слтишком много приседаний"));
             }
-        resolve("Greate")
-         } catch (err) {
-             reject(err.message);
-         }
-    },5000)
-})}
+            setTimeout(() => resolve(count), count * SQUATING_TIME);
+        })
+    }
 
-randomResult().then(alert,alert);
+    console.log("начать отжимания");
+
+    wringOut(101)
+        .then((count) => {
+            console.log(`Отжался ${count} раз`);
+            return squating(5)
+        })
+        .then((count) =>
+            console.log(`Присел ${count} раз`))
+        .catch((err)=>{
+        console.log(err.toString());
+        console.log("Устал")}
+        );
 
 
 }

@@ -1185,19 +1185,38 @@
         })
     }
 
-    console.log("начать отжимания");
+    console.log("начать тренировку");
 
-    wringOut(101)
-        .then((count) => {
-            console.log(`Отжался ${count} раз`);
-            return squating(5)
-        })
-        .then((count) =>
-            console.log(`Присел ${count} раз`))
-        .catch((err)=>{
-        console.log(err.toString());
-        console.log("Устал")}
-        );
+    /*  wringOut(101)
+         .then((count) => {
+             console.log(`Отжался ${count} раз`);
+             return squating(5)
+         })
+         .then((count) =>
+             console.log(`Присел ${count} раз`))
+         .catch((err)=>{
+         console.log(err.toString());
+         console.log("Устал")}
+         ); */
+
+    //3.1 
+    async function myTraining() {
+       try {
+        await wringOut(10);
+                console.log(`Отжался 10 раз`);
+        await squating(5);
+                console.log(`Присел 5 раз`);
+                return true;
+       }
+       catch(err){
+                console.log(err.toString());
+                console.log("Устал");
+                return false;
+            }
+    }
+
+    myTraining().then(result => console.log(result));
+
 
 
 }

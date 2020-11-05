@@ -1164,7 +1164,7 @@
     randomResult().then(alert,alert); */
 
     //3
-    const wring_out_time = 500;
+    /*const wring_out_time = 500;
     const SQUATING_TIME = 200;
 
     function wringOut(count) {
@@ -1187,7 +1187,7 @@
 
     console.log("начать тренировку");
 
-    /*  wringOut(101)
+    wringOut(101)
          .then((count) => {
              console.log(`Отжался ${count} раз`);
              return squating(5)
@@ -1200,23 +1200,104 @@
          ); */
 
     //3.1 
-    async function myTraining() {
-       try {
-        await wringOut(10);
-                console.log(`Отжался 10 раз`);
-        await squating(5);
-                console.log(`Присел 5 раз`);
-                return true;
-       }
-       catch(err){
-                console.log(err.toString());
-                console.log("Устал");
-                return false;
+
+    /* const wring_out_time = 500;
+    const SQUATING_TIME = 200;
+
+    function wringOut(count) {
+        return new Promise((resolve, reject) => {
+            if (count > 100) {
+                reject(new Error("Слтишком много отжиманий"));
             }
+            setTimeout(() => resolve(count), count * wring_out_time)
+        })
+    }
+
+    function squating(count) {
+        return new Promise((resolve, reject) => {
+            if (count > 100) {
+                reject(new Error("Слтишком много приседаний"));
+            }
+            setTimeout(() => resolve(count), count * SQUATING_TIME);
+        })
+    }
+
+    console.log("начать тренировку");
+    async function myTraining() {
+        try {
+            await wringOut(10);
+            console.log(`Отжался 10 раз`);
+            await squating(5);
+            console.log(`Присел 5 раз`);
+            return true;
+        }
+        catch (err) {
+            console.log(err.toString());
+            console.log("Устал");
+            return false;
+        }
     }
 
     myTraining().then(result => console.log(result));
+ */
 
+
+    //4
+    /*  async function loadJson(url){
+           let response = await fetch(url);
+                   if (response.status == 200) {
+                      let json = await response.json();
+                      return json;
+                   } 
+                       throw new Error(response.status);
+        }
+       
+        loadJson('https://learn.javascript.ru/no-such-user.json') 
+        .catch(alert); */
+
+    //5
+ /*    class HttpError extends Error {
+        constructor(response) {
+            super(`${response.status} for ${response.url}`);
+            this.name = "HttpError";
+            this.response = response;
+        }
+    }
+
+
+    async function loadJson(url) {
+        let response = await fetch(url);
+        if (response.status == 200) {
+            return response.json()
+        }
+        throw new HttpErrror(response)
+    }
+
+    async function demoGithubUser() {
+        let user;
+
+        while (true) {
+            let name = prompt("N?", "iliakan");
+
+            try {
+                user = await loadJson(`https://api.github.com/users/${name}`)
+            }
+            catch (err) {
+                if (err instanceof HttpError && err.response.status == 404) {
+                    alert("Такого пользователя не существует, пожалуйста, повторите ввод.");
+                }
+                else {
+                    throw err;
+                }
+            }
+
+            alert(`Полное имя: ${user.name}.`);
+            return user;
+
+        }
+    }
+
+    demoGithubUser(); */
 
 
 }

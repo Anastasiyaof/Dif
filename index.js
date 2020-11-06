@@ -1256,48 +1256,48 @@
         .catch(alert); */
 
     //5
- /*    class HttpError extends Error {
-        constructor(response) {
-            super(`${response.status} for ${response.url}`);
-            this.name = "HttpError";
-            this.response = response;
-        }
-    }
-
-
-    async function loadJson(url) {
-        let response = await fetch(url);
-        if (response.status == 200) {
-            return response.json()
-        }
-        throw new HttpErrror(response)
-    }
-
-    async function demoGithubUser() {
-        let user;
-
-        while (true) {
-            let name = prompt("N?", "iliakan");
-
-            try {
-                user = await loadJson(`https://api.github.com/users/${name}`)
-            }
-            catch (err) {
-                if (err instanceof HttpError && err.response.status == 404) {
-                    alert("Такого пользователя не существует, пожалуйста, повторите ввод.");
-                }
-                else {
-                    throw err;
-                }
-            }
-
-            alert(`Полное имя: ${user.name}.`);
-            return user;
-
-        }
-    }
-
-    demoGithubUser(); */
+    /*    class HttpError extends Error {
+           constructor(response) {
+               super(`${response.status} for ${response.url}`);
+               this.name = "HttpError";
+               this.response = response;
+           }
+       }
+   
+   
+       async function loadJson(url) {
+           let response = await fetch(url);
+           if (response.status == 200) {
+               return response.json()
+           }
+           throw new HttpErrror(response)
+       }
+   
+       async function demoGithubUser() {
+           let user;
+   
+           while (true) {
+               let name = prompt("N?", "iliakan");
+   
+               try {
+                   user = await loadJson(`https://api.github.com/users/${name}`)
+               }
+               catch (err) {
+                   if (err instanceof HttpError && err.response.status == 404) {
+                       alert("Такого пользователя не существует, пожалуйста, повторите ввод.");
+                   }
+                   else {
+                       throw err;
+                   }
+               }
+   
+               alert(`Полное имя: ${user.name}.`);
+               return user;
+   
+           }
+       }
+   
+       demoGithubUser(); */
 }
 
 
@@ -1315,45 +1315,169 @@
     console.log(fullArray(5));
  */
 
- //2
+    //2
 
-/*  let arr = [1,2,3,4,5];
- function reverse(arr) {
-     let copy = arr.concat([]);
-     let index = 0;
-     for(let i = copy.length-1; i>-1; i--){
-         arr[index] = copy[i];
-         index++;
+    /*  let arr = [1,2,3,4,5];
+     function reverse(arr) {
+         let copy = arr.concat([]);
+         let index = 0;
+         for(let i = copy.length-1; i>-1; i--){
+             arr[index] = copy[i];
+             index++;
+         }
+         return arr;
      }
-     return arr;
- }
+    
+     console.log(reverse(arr)); */
 
- console.log(reverse(arr)); */
+    //3
+    /* function sumAllArrays(arr) {
+        let sum = 0;
+       arr.forEach(item => {
+          sum += item.reduce((result,item)=>result+item,0)
+       })
+       return sum
+    }
+  
+  console.log(sumAllArrays([[1, 2, 3], [4, 5], [6]]));
+   */
 
- //3
-  /* function sumAllArrays(arr) {
-      let sum = 0;
-     arr.forEach(item => {
-        sum += item.reduce((result,item)=>result+item,0)
-     })
-     return sum
-  }
+    //3.1
+    /* function sumAllArrays(arr) {
+        let sum = 0;
+        for(let i=0; i<arr.length;i++) {
+            let item = arr[i];
+            for(let j = 0; j< item.length; j++){
+                sum += item[j]
+            }
+        }
+        return sum
+    }
+    
+    console.log(sumAllArrays([[1, 2, 3], [4, 5], [6]])); */
 
-console.log(sumAllArrays([[1, 2, 3], [4, 5], [6]]));
- */
+    //4
+    /* function sum3AllArrays(arr) {
+        let sum = 0;
+    
+        for(let i=0; i < arr.length; i++){
+            arr[i].forEach((elem) => {
+              sum += elem.reduce((result,item) => result + item, 0)
+            })
+        }
+        return sum
+    }
+    
+    console.log(sum3AllArrays([[[1, 2], [3, 4]], [[5, 6], [7, 8]]]));
+     */
 
-//3.1
-function sumAllArrays(arr) {
-    let sum = 0;
-    for(let i=0; i<arr.length;i++) {
-        let item = arr[i];
-        for(let j = 0; j< item.length; j++){
-            sum += item[j]
+
+    //5
+
+    /* function isPositive(num) {
+        return num >=0
+    }
+   
+   function makePositiveArr(arr) {
+       let positiveArray = [];
+       arr.forEach((item)=>{
+           if(isPositive(item)) positiveArray.push(item)
+       })
+       return positiveArray
+   }
+   
+   console.log(makePositiveArr([-1,1,0,-8,-9,2])); */
+
+    //6
+    /* function isNumberInRange(num) {
+        return num>0 && num<10
+    }
+    isNumberInRange(5); */
+
+    //7
+    /* function getDigitSum(num){
+        if (num%1 != 0) return;
+        let arr = (""+num).split('');
+       return arr.reduce((sum,item) => sum+(+item),0);
+        
+    }
+    getDigitSum(15);
+    
+    //7.1
+    
+    function equalSumYears (equal) {
+        for(let i=1; i< new Date().getFullYear(); i++) {
+            if(getDigitSum(i) == equal) console.log(i)
         }
     }
-    return sum
-}
+    
+    equalSumYears(13); */
 
-console.log(sumAllArrays([[1, 2, 3], [4, 5], [6]]));
+    //8
+/*     function isEven(num) {
+        return num % 2 == 0
+    }
+
+    function makeEvenArray(arr) {
+        let evenArr = [];
+        for (let item of arr) {
+            isEven(item) ? evenArr.push(item) : null
+        }
+        return evenArr
+    }
+    makeEvenArray([1, 2, 3, 4, 3, 4, 8]); */
+
+//9
+
+/* function getDivisors(num) {
+    let arr = [];
+  for(let i=1; i < num+1; i++){
+      if(num%i == 0) arr.push(i);
+  }
+   return arr
+}
+getDivisors(12); */
+
+ //10
+/*
+function inArray(elem,arr) {
+    for(let item of arr) {
+        if(item == elem) return true
+    }
+
+    return false
+}
+inArray(1,[1,2]); */
+
+//11 
+/* function getIntersection(arr1,arr2) {
+    let result = [];
+  for(let item1 of arr1) {
+      for(let item2 of arr2){
+          if(item1 == item2) result.push(item1)
+      }
+  }
+  return result 
+}
+getIntersection([1, 2, 3], [2, 3, 4]); */
+
+//12
+function mixt(str) {
+    let even = '';
+    let odd ='';
+  for(let i=0; i< str.length; i++) {
+     if(i%2 == 0) even += str[i];
+     else odd += str[i];
+  }
+
+  let result = '';
+  for(let i=0; i< str.length; i++) {
+     if(odd[i]) result += odd[i];
+     if(even[i]) result += even[i];
+    }
+return result
+}
+mixt('123456')
+
 
 }

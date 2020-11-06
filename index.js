@@ -1298,6 +1298,62 @@
     }
 
     demoGithubUser(); */
+}
 
+
+{ // diferent
+
+    //1
+    /* function fillArray (length) {
+       let arr = [];
+    for(let i=0; i < length; i++) {
+        arr.push("x".repeat(i+1))
+    }
+    return arr;
+    }
+
+    console.log(fullArray(5));
+ */
+
+ //2
+
+/*  let arr = [1,2,3,4,5];
+ function reverse(arr) {
+     let copy = arr.concat([]);
+     let index = 0;
+     for(let i = copy.length-1; i>-1; i--){
+         arr[index] = copy[i];
+         index++;
+     }
+     return arr;
+ }
+
+ console.log(reverse(arr)); */
+
+ //3
+  /* function sumAllArrays(arr) {
+      let sum = 0;
+     arr.forEach(item => {
+        sum += item.reduce((result,item)=>result+item,0)
+     })
+     return sum
+  }
+
+console.log(sumAllArrays([[1, 2, 3], [4, 5], [6]]));
+ */
+
+//3.1
+function sumAllArrays(arr) {
+    let sum = 0;
+    for(let i=0; i<arr.length;i++) {
+        let item = arr[i];
+        for(let j = 0; j< item.length; j++){
+            sum += item[j]
+        }
+    }
+    return sum
+}
+
+console.log(sumAllArrays([[1, 2, 3], [4, 5], [6]]));
 
 }

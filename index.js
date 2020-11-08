@@ -1462,7 +1462,7 @@ inArray(1,[1,2]); */
 getIntersection([1, 2, 3], [2, 3, 4]); */
 
 //12
-function mixt(str) {
+/* function mixt(str) {
     let even = '';
     let odd ='';
   for(let i=0; i< str.length; i++) {
@@ -1477,7 +1477,29 @@ function mixt(str) {
     }
 return result
 }
-mixt('123456')
+mixt('123456') */
 
+
+//13
+/* function arrItems(arr) {
+    if (arr.length == 0) return;
+    console.log(arr[0]);
+    arr.shift();
+    return arrItems(arr);
+}
+
+arrItems([1,2,3,4,5]); */
+}
+
+
+{//DOM
+
+//1
+
+    let elem = document.getElementsByName('button-1')[0];
+    console.log(elem)
+    elem.onclick = function() {
+        alert("Привет!");
+    }
 
 }

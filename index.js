@@ -1555,14 +1555,27 @@ function changeText() {
 button.onclick = changeText; */
 
 //7
-let button = document.querySelector('.button-4');
+/* let button = document.querySelector('.button-4');
 
 function changeColor() {
     let input = document.querySelector('.fourth');
     input.style.color = 'red';
 }
 
-button.onclick = changeColor;
+button.onclick = changeColor; */
+
+//8
+/* let buttonLock = document.querySelector('.button-5');
+let buttonUnlock = document.querySelectorAll('.button-5')[1];
+
+let input = document.querySelector('.fifth');
+   buttonLock.onclick = () => { input.disabled = true };
+   buttonUnlock.onclick = () => { input.disabled = false } */
+
+//9
+
+let button = document.querySelector('.button-6');
+button.onmouseover = () => alert('Привет');
 
 
 }

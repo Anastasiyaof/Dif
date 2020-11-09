@@ -1495,11 +1495,74 @@ arrItems([1,2,3,4,5]); */
 {//DOM
 
 //1
-
+/* 
     let elem = document.getElementsByName('button-1')[0];
     console.log(elem)
     elem.onclick = function() {
         alert("Привет!");
-    }
+    } */
+//2
+/* function changeInputValue (elem,value) {
+  elem.value = value;
+}
+
+let input = document.querySelector('.first');
+let button = document.getElementsByName("button-1")[0];
+button.onclick = () => changeInputValue(input,"!!!"); */
+
+//3
+/* let button = document.getElementsByName("button-1")[0];
+let input = document.querySelectorAll('.first')[0];
+
+function showValue() {
+    alert(input.value)
+}
+
+button.onclick = showValue; */
+
+//4
+/* let button = document.getElementsByName("button-2")[0];
+let input = document.getElementsByClassName('second')[0];
+
+function inputPow() {
+   alert(input.value * input.value);
+    
+}
+
+button.onclick = inputPow; */
+
+//5
+/* function changeInputValues() {
+    let inp1 = document.querySelectorAll('.third')[0];
+    let inp2 = document.querySelectorAll('.third')[1];
+    let value1 = inp1.value;
+    let value2 = inp2.value;
+    inp1.value = value2;
+    inp2.value = value1;
+
+}
+
+let button = document.getElementsByClassName("button-3")[0];
+button.onclick = changeInputValues; */
+
+//6
+/* let button = document.getElementsByClassName("chengeValue")[0];
+
+function changeText() {
+    button.innerHTML = "Другой текст";
+}
+
+button.onclick = changeText; */
+
+//7
+let button = document.querySelector('.button-4');
+
+function changeColor() {
+    let input = document.querySelector('.fourth');
+    input.style.color = 'red';
+}
+
+button.onclick = changeColor;
+
 
 }

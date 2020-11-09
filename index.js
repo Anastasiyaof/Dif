@@ -1574,8 +1574,18 @@ let input = document.querySelector('.fifth');
 
 //9
 
-let button = document.querySelector('.button-6');
-button.onmouseover = () => alert('Привет');
+/* let button = document.querySelector('.button-6');
+button.onmouseover = () => alert('Привет'); */
 
+//10
+
+/* let button = document.getElementsByClassName('button-7')[0];
+button.ondblclick = ()=> alert("Привет"); */
+
+
+//11
+let div = document.getElementsByTagName('div')[0];
+div.style.border = "1px solid red";
+div.onmouseout = () => alert("Привет");
 
 }

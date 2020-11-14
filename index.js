@@ -1584,8 +1584,28 @@ button.ondblclick = ()=> alert("Привет"); */
 
 
 //11
-let div = document.getElementsByTagName('div')[0];
+/* let div = document.getElementsByTagName('div')[0];
 div.style.border = "1px solid red";
-div.onmouseout = () => alert("Привет");
+div.onmouseout = () => alert("Привет"); */
+
+//12
+/* let button = document.getElementsByClassName('button')[0];
+let span = document.getElementsByTagName('span')[0];
+
+button.onclick = () => span.innerHTML = "Другой текст"; */
+
+//13
+/* let button = document.getElementsByClassName('button')[0];
+let span = document.getElementsByTagName('span')[0];
+
+function b() {
+let b = document.createElement("b");
+b.innerHTML = span.innerHTML;
+span.replaceWith(b);
+}
+
+button.addEventListener("click",b); */
+
+
 
 }

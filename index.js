@@ -1612,7 +1612,7 @@ button.addEventListener("click",b);  */
  
 //1 
 
-let div = document.createElement('div');
+/* let div = document.createElement('div');
 div.style.width = '300px';
 div.style.height = "300px";
 div.style.overflow = "scroll";
@@ -1623,6 +1623,18 @@ function getScrollWidth() {
     return div.offsetWidth - (div.clientLeft * 2) - div.clientWidth
 }
  
-alert(getScrollWidth());
+alert(getScrollWidth()); */
+
+//2
+let field = document.getElementById('field');
+let ball = document.getElementById("ball");
+let ballCenter = ball.clientWidth / 2 ;
+let fieldCenterW = field.clientWidth / 2;
+let fieldCenterH = field.clientHeight / 2;
+
+ball.style.top = fieldCenterH - ballCenter +"px";
+ball.style.left = fieldCenterW - ballCenter+"px";
+
+
     
 }

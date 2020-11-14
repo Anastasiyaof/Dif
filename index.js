@@ -1595,7 +1595,7 @@ let span = document.getElementsByTagName('span')[0];
 button.onclick = () => span.innerHTML = "Другой текст"; */
 
 //13
-/* let button = document.getElementsByClassName('button')[0];
+/*  let button = document.getElementsByClassName('button')[0];
 let span = document.getElementsByTagName('span')[0];
 
 function b() {
@@ -1604,8 +1604,25 @@ b.innerHTML = span.innerHTML;
 span.replaceWith(b);
 }
 
-button.addEventListener("click",b); */
+button.addEventListener("click",b);  */
 
+}
 
+{ //elemSize
+ 
+//1 
 
+let div = document.createElement('div');
+div.style.width = '300px';
+div.style.height = "300px";
+div.style.overflow = "scroll";
+div.style.border = "solid 3px red";
+document.body.append(div);
+
+function getScrollWidth() {
+    return div.offsetWidth - (div.clientLeft * 2) - div.clientWidth
+}
+ 
+alert(getScrollWidth());
+    
 }

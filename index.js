@@ -1638,7 +1638,7 @@ ball.style.left = fieldCenterW - ballCenter+"px";
 
 
 //3
-function showNotification({top = 0, right = 0, className, html}) {
+/* function showNotification({top = 0, right = 0, className, html}) {
       let div = document.createElement('div');
       div.style.top = top + "px";
       div.style.right = right + "px";
@@ -1658,7 +1658,34 @@ setInterval(() => {
     html: 'Hello ' + i++,
     className: "welcome"
   });
-}, 2000);
+}, 2000); */
 
+
+//4
+
+document.onclick = function(e) { // показывает координаты точки клика
+    coords.innerHTML = e.clientX + ':' + e.clientY;
+  };
+
+
+  let box = field.getBoundingClientRect();
+  let t = box.top;
+  let l = box.left;
+  let answer_1 ="1)"+ l +":"+ t;
+  console.log(answer_1);
+  let answer_2l = l + box.width;
+  let answer_2b = box.top + box.height;
+  let answer_2 = "2)" + answer_2l + ":" + answer_2b;
+  console.log(answer_2);
+
+  let bord = field.clientTop;
+  let answer_3l = l + bord;
+  let answer_3t = t + bord;
+  let answer_3 = "3)" +  answer_3l + ":" + answer_3t;
+  console.log(answer_3);
+  let answer_4l = answer_2l-bord;
+  let answer_4b = answer_2b-bord;
+  let answer_4 = "4)" + answer_4l + ":" + answer_4b;
+  console.log(answer_4);
     
 }

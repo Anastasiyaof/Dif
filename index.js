@@ -1626,7 +1626,7 @@ function getScrollWidth() {
 alert(getScrollWidth()); */
 
 //2
-let field = document.getElementById('field');
+/* let field = document.getElementById('field');
 let ball = document.getElementById("ball");
 let ballCenter = ball.clientWidth / 2 ;
 let fieldCenterW = field.clientWidth / 2;
@@ -1634,7 +1634,31 @@ let fieldCenterH = field.clientHeight / 2;
 
 ball.style.top = fieldCenterH - ballCenter +"px";
 ball.style.left = fieldCenterW - ballCenter+"px";
+ */
 
+
+//3
+function showNotification({top = 0, right = 0, className, html}) {
+      let div = document.createElement('div');
+      div.style.top = top + "px";
+      div.style.right = right + "px";
+      div.className = className;
+      div.innerHTML = html;
+      div.style.position = 'absolute';
+      document.body.append(div);
+      setTimeout(()=> div.remove(),1500)
+}
+
+
+let i = 1;
+setInterval(() => {
+  showNotification({
+    top: 10,
+    right: 10,
+    html: 'Hello ' + i++,
+    className: "welcome"
+  });
+}, 2000);
 
     
 }

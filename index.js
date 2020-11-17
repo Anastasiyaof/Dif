@@ -1414,278 +1414,317 @@
     equalSumYears(13); */
 
     //8
-/*     function isEven(num) {
-        return num % 2 == 0
-    }
-
-    function makeEvenArray(arr) {
-        let evenArr = [];
-        for (let item of arr) {
-            isEven(item) ? evenArr.push(item) : null
+    /*     function isEven(num) {
+            return num % 2 == 0
         }
-        return evenArr
-    }
-    makeEvenArray([1, 2, 3, 4, 3, 4, 8]); */
+    
+        function makeEvenArray(arr) {
+            let evenArr = [];
+            for (let item of arr) {
+                isEven(item) ? evenArr.push(item) : null
+            }
+            return evenArr
+        }
+        makeEvenArray([1, 2, 3, 4, 3, 4, 8]); */
 
-//9
+    //9
 
-/* function getDivisors(num) {
-    let arr = [];
-  for(let i=1; i < num+1; i++){
-      if(num%i == 0) arr.push(i);
-  }
-   return arr
-}
-getDivisors(12); */
-
- //10
-/*
-function inArray(elem,arr) {
-    for(let item of arr) {
-        if(item == elem) return true
-    }
-
-    return false
-}
-inArray(1,[1,2]); */
-
-//11 
-/* function getIntersection(arr1,arr2) {
-    let result = [];
-  for(let item1 of arr1) {
-      for(let item2 of arr2){
-          if(item1 == item2) result.push(item1)
+    /* function getDivisors(num) {
+        let arr = [];
+      for(let i=1; i < num+1; i++){
+          if(num%i == 0) arr.push(i);
       }
-  }
-  return result 
-}
-getIntersection([1, 2, 3], [2, 3, 4]); */
-
-//12
-/* function mixt(str) {
-    let even = '';
-    let odd ='';
-  for(let i=0; i< str.length; i++) {
-     if(i%2 == 0) even += str[i];
-     else odd += str[i];
-  }
-
-  let result = '';
-  for(let i=0; i< str.length; i++) {
-     if(odd[i]) result += odd[i];
-     if(even[i]) result += even[i];
+       return arr
     }
-return result
-}
-mixt('123456') */
+    getDivisors(12); */
+
+    //10
+    /*
+    function inArray(elem,arr) {
+        for(let item of arr) {
+            if(item == elem) return true
+        }
+    
+        return false
+    }
+    inArray(1,[1,2]); */
+
+    //11 
+    /* function getIntersection(arr1,arr2) {
+        let result = [];
+      for(let item1 of arr1) {
+          for(let item2 of arr2){
+              if(item1 == item2) result.push(item1)
+          }
+      }
+      return result 
+    }
+    getIntersection([1, 2, 3], [2, 3, 4]); */
+
+    //12
+    /* function mixt(str) {
+        let even = '';
+        let odd ='';
+      for(let i=0; i< str.length; i++) {
+         if(i%2 == 0) even += str[i];
+         else odd += str[i];
+      }
+    
+      let result = '';
+      for(let i=0; i< str.length; i++) {
+         if(odd[i]) result += odd[i];
+         if(even[i]) result += even[i];
+        }
+    return result
+    }
+    mixt('123456') */
 
 
-//13
-/* function arrItems(arr) {
-    if (arr.length == 0) return;
-    console.log(arr[0]);
-    arr.shift();
-    return arrItems(arr);
-}
-
-arrItems([1,2,3,4,5]); */
+    //13
+    /* function arrItems(arr) {
+        if (arr.length == 0) return;
+        console.log(arr[0]);
+        arr.shift();
+        return arrItems(arr);
+    }
+    
+    arrItems([1,2,3,4,5]); */
 }
 
 
 {//DOM
 
-//1
-/* 
-    let elem = document.getElementsByName('button-1')[0];
-    console.log(elem)
-    elem.onclick = function() {
-        alert("Привет!");
-    } */
-//2
-/* function changeInputValue (elem,value) {
-  elem.value = value;
-}
-
-let input = document.querySelector('.first');
-let button = document.getElementsByName("button-1")[0];
-button.onclick = () => changeInputValue(input,"!!!"); */
-
-//3
-/* let button = document.getElementsByName("button-1")[0];
-let input = document.querySelectorAll('.first')[0];
-
-function showValue() {
-    alert(input.value)
-}
-
-button.onclick = showValue; */
-
-//4
-/* let button = document.getElementsByName("button-2")[0];
-let input = document.getElementsByClassName('second')[0];
-
-function inputPow() {
-   alert(input.value * input.value);
+    //1
+    /* 
+        let elem = document.getElementsByName('button-1')[0];
+        console.log(elem)
+        elem.onclick = function() {
+            alert("Привет!");
+        } */
+    //2
+    /* function changeInputValue (elem,value) {
+      elem.value = value;
+    }
     
-}
+    let input = document.querySelector('.first');
+    let button = document.getElementsByName("button-1")[0];
+    button.onclick = () => changeInputValue(input,"!!!"); */
 
-button.onclick = inputPow; */
+    //3
+    /* let button = document.getElementsByName("button-1")[0];
+    let input = document.querySelectorAll('.first')[0];
+    
+    function showValue() {
+        alert(input.value)
+    }
+    
+    button.onclick = showValue; */
 
-//5
-/* function changeInputValues() {
-    let inp1 = document.querySelectorAll('.third')[0];
-    let inp2 = document.querySelectorAll('.third')[1];
-    let value1 = inp1.value;
-    let value2 = inp2.value;
-    inp1.value = value2;
-    inp2.value = value1;
+    //4
+    /* let button = document.getElementsByName("button-2")[0];
+    let input = document.getElementsByClassName('second')[0];
+    
+    function inputPow() {
+       alert(input.value * input.value);
+        
+    }
+    
+    button.onclick = inputPow; */
 
-}
+    //5
+    /* function changeInputValues() {
+        let inp1 = document.querySelectorAll('.third')[0];
+        let inp2 = document.querySelectorAll('.third')[1];
+        let value1 = inp1.value;
+        let value2 = inp2.value;
+        inp1.value = value2;
+        inp2.value = value1;
+    
+    }
+    
+    let button = document.getElementsByClassName("button-3")[0];
+    button.onclick = changeInputValues; */
 
-let button = document.getElementsByClassName("button-3")[0];
-button.onclick = changeInputValues; */
+    //6
+    /* let button = document.getElementsByClassName("chengeValue")[0];
+    
+    function changeText() {
+        button.innerHTML = "Другой текст";
+    }
+    
+    button.onclick = changeText; */
 
-//6
-/* let button = document.getElementsByClassName("chengeValue")[0];
+    //7
+    /* let button = document.querySelector('.button-4');
+    
+    function changeColor() {
+        let input = document.querySelector('.fourth');
+        input.style.color = 'red';
+    }
+    
+    button.onclick = changeColor; */
 
-function changeText() {
-    button.innerHTML = "Другой текст";
-}
+    //8
+    /* let buttonLock = document.querySelector('.button-5');
+    let buttonUnlock = document.querySelectorAll('.button-5')[1];
+    
+    let input = document.querySelector('.fifth');
+       buttonLock.onclick = () => { input.disabled = true };
+       buttonUnlock.onclick = () => { input.disabled = false } */
 
-button.onclick = changeText; */
+    //9
 
-//7
-/* let button = document.querySelector('.button-4');
+    /* let button = document.querySelector('.button-6');
+    button.onmouseover = () => alert('Привет'); */
 
-function changeColor() {
-    let input = document.querySelector('.fourth');
-    input.style.color = 'red';
-}
+    //10
 
-button.onclick = changeColor; */
-
-//8
-/* let buttonLock = document.querySelector('.button-5');
-let buttonUnlock = document.querySelectorAll('.button-5')[1];
-
-let input = document.querySelector('.fifth');
-   buttonLock.onclick = () => { input.disabled = true };
-   buttonUnlock.onclick = () => { input.disabled = false } */
-
-//9
-
-/* let button = document.querySelector('.button-6');
-button.onmouseover = () => alert('Привет'); */
-
-//10
-
-/* let button = document.getElementsByClassName('button-7')[0];
-button.ondblclick = ()=> alert("Привет"); */
+    /* let button = document.getElementsByClassName('button-7')[0];
+    button.ondblclick = ()=> alert("Привет"); */
 
 
-//11
-/* let div = document.getElementsByTagName('div')[0];
-div.style.border = "1px solid red";
-div.onmouseout = () => alert("Привет"); */
+    //11
+    /* let div = document.getElementsByTagName('div')[0];
+    div.style.border = "1px solid red";
+    div.onmouseout = () => alert("Привет"); */
 
-//12
-/* let button = document.getElementsByClassName('button')[0];
-let span = document.getElementsByTagName('span')[0];
+    //12
+    /* let button = document.getElementsByClassName('button')[0];
+    let span = document.getElementsByTagName('span')[0];
+    
+    button.onclick = () => span.innerHTML = "Другой текст"; */
 
-button.onclick = () => span.innerHTML = "Другой текст"; */
-
-//13
-/*  let button = document.getElementsByClassName('button')[0];
-let span = document.getElementsByTagName('span')[0];
-
-function b() {
-let b = document.createElement("b");
-b.innerHTML = span.innerHTML;
-span.replaceWith(b);
-}
-
-button.addEventListener("click",b);  */
+    //13
+    /*  let button = document.getElementsByClassName('button')[0];
+    let span = document.getElementsByTagName('span')[0];
+    
+    function b() {
+    let b = document.createElement("b");
+    b.innerHTML = span.innerHTML;
+    span.replaceWith(b);
+    }
+    
+    button.addEventListener("click",b);  */
 
 }
 
 { //elemSize
- 
-//1 
 
-/* let div = document.createElement('div');
-div.style.width = '300px';
-div.style.height = "300px";
-div.style.overflow = "scroll";
-div.style.border = "solid 3px red";
-document.body.append(div);
+    //1 
 
-function getScrollWidth() {
-    return div.offsetWidth - (div.clientLeft * 2) - div.clientWidth
-}
- 
-alert(getScrollWidth()); */
-
-//2
-/* let field = document.getElementById('field');
-let ball = document.getElementById("ball");
-let ballCenter = ball.clientWidth / 2 ;
-let fieldCenterW = field.clientWidth / 2;
-let fieldCenterH = field.clientHeight / 2;
-
-ball.style.top = fieldCenterH - ballCenter +"px";
-ball.style.left = fieldCenterW - ballCenter+"px";
- */
-
-
-//3
-/* function showNotification({top = 0, right = 0, className, html}) {
-      let div = document.createElement('div');
-      div.style.top = top + "px";
-      div.style.right = right + "px";
-      div.className = className;
-      div.innerHTML = html;
-      div.style.position = 'absolute';
-      document.body.append(div);
-      setTimeout(()=> div.remove(),1500)
-}
-
-
-let i = 1;
-setInterval(() => {
-  showNotification({
-    top: 10,
-    right: 10,
-    html: 'Hello ' + i++,
-    className: "welcome"
-  });
-}, 2000); */
-
-
-//4
-
-document.onclick = function(e) { // показывает координаты точки клика
-    coords.innerHTML = e.clientX + ':' + e.clientY;
-  };
-
-
-  let box = field.getBoundingClientRect();
-  let t = box.top;
-  let l = box.left;
-  let answer_1 ="1)"+ l +":"+ t;
-  console.log(answer_1);
-  let answer_2l = l + box.width;
-  let answer_2b = box.top + box.height;
-  let answer_2 = "2)" + answer_2l + ":" + answer_2b;
-  console.log(answer_2);
-
-  let bord = field.clientTop;
-  let answer_3l = l + bord;
-  let answer_3t = t + bord;
-  let answer_3 = "3)" +  answer_3l + ":" + answer_3t;
-  console.log(answer_3);
-  let answer_4l = answer_2l-bord;
-  let answer_4b = answer_2b-bord;
-  let answer_4 = "4)" + answer_4l + ":" + answer_4b;
-  console.log(answer_4);
+    /* let div = document.createElement('div');
+    div.style.width = '300px';
+    div.style.height = "300px";
+    div.style.overflow = "scroll";
+    div.style.border = "solid 3px red";
+    document.body.append(div);
     
+    function getScrollWidth() {
+        return div.offsetWidth - (div.clientLeft * 2) - div.clientWidth
+    }
+     
+    alert(getScrollWidth()); */
+
+    //2
+    /* let field = document.getElementById('field');
+    let ball = document.getElementById("ball");
+    let ballCenter = ball.clientWidth / 2 ;
+    let fieldCenterW = field.clientWidth / 2;
+    let fieldCenterH = field.clientHeight / 2;
+    
+    ball.style.top = fieldCenterH - ballCenter +"px";
+    ball.style.left = fieldCenterW - ballCenter+"px";
+     */
+
+
+    //3
+    /* function showNotification({top = 0, right = 0, className, html}) {
+          let div = document.createElement('div');
+          div.style.top = top + "px";
+          div.style.right = right + "px";
+          div.className = className;
+          div.innerHTML = html;
+          div.style.position = 'absolute';
+          document.body.append(div);
+          setTimeout(()=> div.remove(),1500)
+    }
+    
+    
+    let i = 1;
+    setInterval(() => {
+      showNotification({
+        top: 10,
+        right: 10,
+        html: 'Hello ' + i++,
+        className: "welcome"
+      });
+    }, 2000); */
+
+
+    //4
+
+    /* document.onclick = function(e) { // показывает координаты точки клика
+        coords.innerHTML = e.clientX + ':' + e.clientY;
+      };
+    
+    
+      let box = field.getBoundingClientRect();
+      let t = box.top;
+      let l = box.left;
+      let answer_1 ="1)"+ l +":"+ t;
+      console.log(answer_1);
+      let answer_2l = l + box.width;
+      let answer_2b = box.top + box.height;
+      let answer_2 = "2)" + answer_2l + ":" + answer_2b;
+      console.log(answer_2);
+    
+      let bord = field.clientTop;
+      let answer_3l = l + bord;
+      let answer_3t = t + bord;
+      let answer_3 = "3)" +  answer_3l + ":" + answer_3t;
+      console.log(answer_3);
+      let answer_4l = answer_2l-bord;
+      let answer_4b = answer_2b-bord;
+      let answer_4 = "4)" + answer_4l + ":" + answer_4b;
+      console.log(answer_4); */
+
+
+    //5
+
+    function positionAt(anchor, position, elem) {
+        let anchorCoords = anchor.getBoundingClientRect();
+        switch (position) {
+            case "top":
+                elem.style.left = anchorCoords.left + "px";
+                elem.style.top = anchorCoords.top - elem.offsetHeight + "px";
+                break;
+            case "right":
+                elem.style.left = anchorCoords.right + "px";
+                elem.style.top = anchorCoords.top + "px";
+                break;
+            case "bottom":
+                elem.style.top = anchorCoords.bottom + "px";
+                elem.style.left = anchorCoords.left + "px";
+                break;
+        }
+    }
+
+    function showNote(anchor, position, html) {
+        let note = document.createElement('div');
+        note.className = "note";
+        note.innerHTML = html;
+        document.body.append(note);
+
+        positionAt(anchor, position, note);
+    }
+
+
+    let blockquote = document.querySelector('blockquote');
+
+    showNote(blockquote, "top", "note above");
+    showNote(blockquote, "right", "note at the right");
+    showNote(blockquote, "bottom", "note below");
+
+
+    //debugger
 }

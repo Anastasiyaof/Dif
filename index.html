@@ -47,6 +47,35 @@
       text-indent: -20px;
       font: 12px/1 monospace;
     }
+
+    .note {
+      position: fixed;
+      z-index: 1000;
+      padding: 5px;
+      border: 1px solid black;
+      background: white;
+      text-align: center;
+      font: italic 14px serif;
+    }
+
+    blockquote {
+      background: #f9f9f9;
+      border-left: 10px solid #ccc;
+      margin: 0 0 0 100px;
+      padding: .5em 10px;
+      quotes: "\201C""\201D""\2018""\2019";
+      display: inline-block;
+      white-space: pre;
+    }
+
+    blockquote:before {
+      color: #ccc;
+      content: open-quote;
+      font-size: 4em;
+      line-height: .1em;
+      margin-right: .25em;
+      vertical-align: -.4em;
+    }
   </style>
 </head>
 
@@ -98,7 +127,7 @@
     magnam consequatur sit laboriosam velit excepturi laborum sequi eos placeat et quia deleniti? Corrupti velit impedit autem et obcaecati fuga debitis nemo ratione iste veniam amet dicta hic ipsam unde cupiditate incidunt aut iure ipsum officiis soluta
     temporibus. Tempore dicta ullam delectus numquam consectetur quisquam explicabo culpa excepturi placeat quo sequi molestias reprehenderit hic at nemo cumque voluptates quidem repellendus maiores unde earum molestiae ad.
   </p> -->
-
+  <!-- 
   Кликните в любом месте для получения координат в контексте окна.
   <br> Это для тестирования, чтобы проверить результат, который вы получили с помощью JavaScript.
   <br>
@@ -114,7 +143,24 @@
   <div class="triangle-right" style="left:-20px;top:-176px">1</div>
   <div class="triangle-right" style="left:-10px;top:-178px">3</div>
   <div class="triangle-right" style="left:190px;top:-40px">4</div>
-  <div class="triangle-right" style="left:200px;top:-42px">2</div>
+  <div class="triangle-right" style="left:200px;top:-42px">2</div> -->
+
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit sint atque dolorum fuga ad incidunt
+    voluptatum error fugiat animi amet! Odio temporibus nulla id unde quaerat dignissimos enim nisi rem provident
+    molestias sit tempore omnis recusandae
+    esse sequi officia sapiente.</p>
+
+  <blockquote>
+    Teacher: Why are you late?
+    Student: There was a man who lost a hundred dollar bill.
+    Teacher: That's nice. Were you helping him look for it?
+    Student: No. I was standing on it.
+  </blockquote>
+
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit sint atque dolorum fuga ad incidunt
+    voluptatum error fugiat animi amet! Odio temporibus nulla id unde quaerat dignissimos enim nisi rem provident
+    molestias sit tempore omnis recusandae
+    esse sequi officia sapiente.</p>
 
 
 </body>

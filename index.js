@@ -1691,8 +1691,9 @@
 
     //5
 
-    function positionAt(anchor, position, elem) {
+ /*    function positionAt(anchor, position, elem) {
         let anchorCoords = anchor.getBoundingClientRect();
+        elem.style.position = "absolute";
         switch (position) {
             case "top":
                 elem.style.left = anchorCoords.left + "px";
@@ -1723,8 +1724,112 @@
 
     showNote(blockquote, "top", "note above");
     showNote(blockquote, "right", "note at the right");
-    showNote(blockquote, "bottom", "note below");
+    showNote(blockquote, "bottom", "note below"); */
+
+//5.1
+ /*    function getCoords(elem) {
+        let box = elem.getBoundingClientRect();
+        return {
+            top: box.top + pageYOffset,
+            left: box.left + pageXOffset,
+            right: box.left + pageXOffset + elem.offsetWidth,
+            bottom: box.top + pageYOffset + elem.offsetHeight
+        }
+    }
+
+    function positionAt(anchor, position, elem) {
+        let anchorCoords = getCoords(anchor);
+        elem.style.position = "absolute";
+        switch (position) {
+            case "top-out":
+                elem.style.left = anchorCoords.left + "px";
+                elem.style.top = anchorCoords.top - elem.offsetHeight + "px";
+                break;
+            case "right-out":
+                elem.style.left = anchorCoords.right+ "px";
+                elem.style.top = anchorCoords.top + "px";
+                break;
+            case "bottom-out":
+                elem.style.top = anchorCoords.bottom + "px";
+                elem.style.left = anchorCoords.left + "px";
+                break;
+        }
+    }
+
+    function showNote(anchor, position, html) {
+        let note = document.createElement('div');
+        note.className = "note";
+        note.innerHTML = html;
+        document.body.append(note);
+
+        positionAt(anchor, position, note);
+    }
 
 
-    //debugger
+    let blockquote = document.querySelector('blockquote');
+
+    showNote(blockquote, "top-out", "note above");
+    showNote(blockquote, "right-out", "note at the right");
+    showNote(blockquote, "bottom-out", "note below"); */
+
+
+    //5.2
+
+    function getCoords(elem) {
+        let box = elem.getBoundingClientRect();
+        return {
+            top: box.top + pageYOffset,
+            left: box.left + pageXOffset
+        }
+    }
+
+    function positionAt(anchor, position, elem) {
+        let anchorCoords = getCoords(anchor);
+        elem.style.position = "absolute";
+        switch (position) {
+            case "top-out":
+                elem.style.left = anchorCoords.left + "px";
+                elem.style.top = anchorCoords.top - elem.offsetHeight + "px";
+                break;
+            case "top-in":
+                elem.style.top = anchorCoords.top + "px";
+                elem.style.left = anchorCoords.left + "px";
+              break;
+            case "right-in":
+                elem.style.top = anchorCoords.top + "px";
+                elem.style.left = anchorCoords.left + anchor.offsetWidth - elem.offsetWidth + "px";
+                break;
+            case "right-out":
+                elem.style.left = anchorCoords.left+ anchor.offsetWidth + "px";
+                elem.style.top = anchorCoords.top + "px";
+                break;
+            case "bottom-out":
+                elem.style.top = anchorCoords.top + anchor.offsetHeight + "px";
+                elem.style.left = anchorCoords.left + "px";
+                break;
+            case "bottom-in":
+                elem.style.top = anchorCoords.top + anchor.offsetHeight - elem.offsetHeight +"px";
+                elem.style.left = anchorCoords.left + "px";
+                break;
+        }
+    }
+
+    function showNote(anchor, position, html) {
+        let note = document.createElement('div');
+        note.className = "note";
+        note.innerHTML = html;
+        document.body.append(note);
+
+        positionAt(anchor, position, note);
+    }
+
+
+    let blockquote = document.querySelector('blockquote');
+
+    showNote(blockquote, "top-out", "note above");
+    showNote(blockquote, "top-in", "note tope in");
+    showNote(blockquote, "right-out", "note at the right");
+    showNote(blockquote, "right-in", "note at the right in");
+    showNote(blockquote, "bottom-out", "note below");
+    showNote(blockquote, "bottom-in", "note in below");
 }

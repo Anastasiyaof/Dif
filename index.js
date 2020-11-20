@@ -1775,7 +1775,7 @@
 
     //5.2
 
-    function getCoords(elem) {
+ /*    function getCoords(elem) {
         let box = elem.getBoundingClientRect();
         return {
             top: box.top + pageYOffset,
@@ -1831,5 +1831,42 @@
     showNote(blockquote, "right-out", "note at the right");
     showNote(blockquote, "right-in", "note at the right in");
     showNote(blockquote, "bottom-out", "note below");
-    showNote(blockquote, "bottom-in", "note in below");
+    showNote(blockquote, "bottom-in", "note in below"); */
+
+//6
+   
+   function getCoords(elem) {
+       let box = elem.getBoundingClientRect();
+       return {
+           top: box.top + pageYOffset,
+           left: box.left + pageXOffset
+       }
+   }
+   
+   let fieldCoords = getCoords(field);
+
+   function mooveBall(event) {
+       let x = event.clientX;
+       let y = event.clientY;
+      let center =  ball.offsetWidth/2;
+      let maxLeft = fieldCoords.left + field.clientLeft + center;
+      let maxRight = fieldCoords.left + field.offsetWidth - field.clientLeft - center;
+      let maxTop = fieldCoords.top + field.clientLeft +center;
+      let maxBottom = fieldCoords.top + field.offsetHeight - field.clientLeft - center;
+      if(x < maxLeft) ball.style.left = maxLeft - center + "px";
+       else if(x > maxRight) ball.style.left = maxRight - center + "px";
+         else ball.style.left = x - center + "px";
+      if (y < maxTop) ball.style.top = maxTop - center + "px";
+        else if (y > maxBottom) ball.style.top = maxBottom - center  + "px";
+           else  ball.style.top = y - center + "px";
+
+   }
+   field.addEventListener('click',mooveBall);
+   
+
+
+
+
+
+
 }

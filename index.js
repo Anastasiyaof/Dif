@@ -1835,7 +1835,7 @@
 
 //6
    
-   function getCoords(elem) {
+/*    function getCoords(elem) {
        let box = elem.getBoundingClientRect();
        return {
            top: box.top + pageYOffset,
@@ -1861,9 +1861,17 @@
            else  ball.style.top = y - center + "px";
 
    }
-   field.addEventListener('click',mooveBall);
+   field.addEventListener('click',mooveBall); */
    
+  //7
 
+  let removeButtons = document.querySelectorAll('.remove-button');
+
+  for( let button of removeButtons) {
+      button.addEventListener("click",function () {
+          button.parentElement.style.display = "none"
+      })
+  }
 
 
 

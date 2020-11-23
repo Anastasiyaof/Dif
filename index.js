@@ -1865,15 +1865,30 @@
    
   //7
 
-  let removeButtons = document.querySelectorAll('.remove-button');
+  /* let removeButtons = document.querySelectorAll('.remove-button');
 
   for( let button of removeButtons) {
       button.addEventListener("click",function () {
           button.parentElement.style.display = "none"
       })
   }
+ */
 
 
+ //8
+
+ let cards = document.querySelectorAll('.slayder > img');
+ let slayder = document.querySelector('.slayder');
+ let next = document.querySelector(".next");
+  next.addEventListener('click', function (){
+      slayder.scrollLeft += 385;
+
+  });
+
+  let back = document.querySelector('.back');
+  back.addEventListener('click',()=>{
+    slayder.scrollLeft -= 400;
+  })
 
 
 

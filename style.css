@@ -1,7 +1,4 @@
-body {
-    margin: 10px auto;
-    width: 470px;
-  }
+
   
   h3 {
     margin: 0;
@@ -27,3 +24,18 @@ body {
     background: none;
     color: red;
   }
+  .wrapper {
+    margin: 10px auto;
+    width: 450px;
+    display: flex;
+    justify-content: space-between;
+}
+.slayderButton {
+    height: 20px;
+    align-self: center;
+}
+.slayder {
+    width: 390px;
+    overflow: hidden;
+    display: flex;
+}

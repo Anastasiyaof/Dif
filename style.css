@@ -1,5 +1,5 @@
 
-  
+  /* 7 */
   h3 {
     margin: 0;
     padding-bottom: .3em;
@@ -24,6 +24,8 @@
     background: none;
     color: red;
   }
+  /* 8 */
+  /*
   .wrapper {
     margin: 10px auto;
     width: 450px;
@@ -38,4 +40,41 @@
     width: 390px;
     overflow: hidden;
     display: flex;
+}
+*/
+
+/*8.1*/
+
+.wrapper {
+  position: relative;
+  width: 450px;
+  margin: 10px auto;
+  padding: 10px 40px;
+}
+.container {
+  width: 400px;
+  overflow: hidden;
+}
+.slayder {
+  width: 19999px;
+  padding: 0;
+}
+li {
+  display: inline-block;
+  list-style: none;
+}
+.slayderButton {
+  position: absolute;
+  top: 40%;
+}
+.next {
+  right: 50px;
+}
+.back {
+  left: 0;
+}
+.slayder img {
+  display: block;
+  width: 130px;
+  transform: translateX(0px);
 }

@@ -1877,7 +1877,7 @@
 
  //8
 
- let cards = document.querySelectorAll('.slayder > img');
+ /* let cards = document.querySelectorAll('.slayder > img');
  let slayder = document.querySelector('.slayder');
  let next = document.querySelector(".next");
   next.addEventListener('click', function (){
@@ -1889,6 +1889,61 @@
   back.addEventListener('click',()=>{
     slayder.scrollLeft -= 400;
   })
+ */
+
+// 8.1
+let slayder = document.querySelector('.slayder');
+let imgs = document.querySelectorAll('img');
+let imgWidth = imgs[0].offsetWidth;
+let first = 1;
+let visible = 2;
+let remaining;
+function last () {
+    remaining = imgs.length - (first + visible);
+}
+last();
+let scroll = 0;
+
+console.log(first,remaining,scroll);
+
+function mooveNext() {
+    if (remaining > 2) {
+        scroll += imgWidth * 3;
+        first +=3;
+        last();
+     }
+     else{
+         scroll += imgWidth * remaining;
+         first += remaining;
+         last();
+     }
+    slayder.style.transform = `translateX(${-scroll}px`;
+}
+
+function mooveBack() {
+    let pre = imgs.length - remaining -3;
+    if(pre > 2){
+        scroll -= imgWidth * 3;
+        first -= 3;
+        last();
+    }
+    else {
+        scroll -= imgWidth * pre;
+        first -= pre;
+        last();
+    }
+    slayder.style.transform = `translateX(${-scroll}px`;
+}
+
+
+document.querySelector('.back').addEventListener('click', mooveBack);
+document.querySelector('.next').addEventListener('click',mooveNext);
+
+
+
+
+
+
 
 
 

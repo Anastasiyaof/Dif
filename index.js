@@ -1892,7 +1892,7 @@
  */
 
 // 8.1
-let slayder = document.querySelector('.slayder');
+/* let slayder = document.querySelector('.slayder');
 let imgs = document.querySelectorAll('img');
 let imgWidth = imgs[0].offsetWidth;
 let first = 1;
@@ -1938,10 +1938,32 @@ function mooveBack() {
 
 document.querySelector('.back').addEventListener('click', mooveBack);
 document.querySelector('.next').addEventListener('click',mooveNext);
+ */
 
+ //8.2
 
+ let width = document.querySelector('img').offsetWidth;
+ let visible = 3;
+ let ul = document.querySelector('.slayder');
+ let position = 0;
 
+ function mooveBack() {
+    position += width * visible;
+    position = Math.min(position,0);
+    ul.style.marginLeft = position +"px";
+ }
 
+ function mooveNext() {
+     position -= width * visible;
+     console.log(position);
+     console.log(document.querySelectorAll('img').length * width);
+     position = Math.max(position, (document.querySelectorAll('img').length - visible)* width * -1);
+     console.log(position);
+     ul.style.marginLeft = position + "px";
+ }
+
+document.querySelector('.back').addEventListener("click",mooveBack);
+document.querySelector('.next').addEventListener("click", mooveNext);
 
 
 

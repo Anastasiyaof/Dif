@@ -1941,7 +1941,7 @@ document.querySelector('.next').addEventListener('click',mooveNext);
  */
 
  //8.2
-
+/* 
  let width = document.querySelector('img').offsetWidth;
  let visible = 3;
  let ul = document.querySelector('.slayder');
@@ -1964,9 +1964,36 @@ document.querySelector('.next').addEventListener('click',mooveNext);
 
 document.querySelector('.back').addEventListener("click",mooveBack);
 document.querySelector('.next').addEventListener("click", mooveNext);
+ */
+}
 
 
+{ //Featch
 
+//1
+async function getUser(name) {
+    let result;
+   try{
+     let promise = await fetch(`https://api.github.com/users/${name}`);
+     if(!promise.ok) throw new Error();
+     result = await promise.json();
+    }
+   catch {
+       return null
+   }
+   return result
+}
+
+function getUsers(arr) {
+    let  userseData = [];
+    arr.forEach( async (element) => {
+      let result = await getUser(element);
+        userseData.push(result)
+    });
+    console.log(userseData);
+}
+
+getUsers(['iliakan', 'remy', 'no.such.users']);
 
 
 }

@@ -1997,8 +1997,7 @@
 
 
     //1.1
-
-    async function getUsersName(arr) {
+ /*    async function getUsersName(arr) {
         let result = [];
         for (let name of arr) {
             let usersData = fetch(`https://api.github.com/users/${name}`)
@@ -2017,5 +2016,26 @@
     }
 
 
-    getUsersName(['iliakan', 'remy', 'no.such.users']);
+    getUsersName(['iliakan', 'remy', 'no.such.users']); */
+
+
+//2
+   async function getUserPostsById(userId=1) {
+       let posts = [];
+       let div = document.createElement('div');
+       let response = await fetch('https://jsonplaceholder.typicode.com/posts')
+         .then(response => response.json())
+         .then(response => {
+             for(let post of response){
+                if(post.userId == userId) {
+                    posts.push(post);
+                    div.insertAdjacentHTML('beforeend', `<h2>${post.title}</h2>`);
+                    div.insertAdjacentHTML('beforeend', `<p>${post.body}</p>`);
+                }
+             }
+            })
+         .then(()=> document.body.append(div));
+   }
+
+  getUserPostsById(1);
 }

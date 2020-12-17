@@ -2020,7 +2020,7 @@
 
 
 //2
-   async function getUserPostsById(userId=1) {
+  /*  async function getUserPostsById(userId=1) {
        let posts = [];
        let div = document.createElement('div');
        let response = await fetch('https://jsonplaceholder.typicode.com/posts')
@@ -2037,5 +2037,16 @@
          .then(()=> document.body.append(div));
    }
 
-  getUserPostsById(1);
+  getUserPostsById(1); */
+}
+
+{ //mix
+    //1
+  let div = document.querySelector('.wrapper');
+  div.addEventListener("click",(Event) => {
+      addBorder(Event)})
+
+  function addBorder(ev) {
+      if(ev.target.tagName == "IMG") ev.target.classList.add('bordered')
+  }
 }

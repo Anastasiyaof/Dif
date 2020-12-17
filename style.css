@@ -51,7 +51,7 @@
   margin: 10px auto;
   padding: 10px 40px;
 }
-.container {
+/* .container {
   width: 386px;
   overflow: hidden;
 }
@@ -78,4 +78,9 @@ li {
   display: block;
   width: 130px;
   transform: translateX(0px);
+} */
+
+.bordered{
+  border: 1px solid red;
+  box-shadow: 0 0 5px black;
 }

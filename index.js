@@ -2042,11 +2042,38 @@
 
 { //mix
     //1
-  let div = document.querySelector('.wrapper');
+  /* let div = document.querySelector('.wrapper');
   div.addEventListener("click",(Event) => {
       addBorder(Event)})
 
   function addBorder(ev) {
       if(ev.target.tagName == "IMG") ev.target.classList.add('bordered')
-  }
+  } */
+
+
+  //2
+ /* function isPolindrom(str) {
+    str = str.toLowerCase();
+    let arr = str.split('').reverse().join('');
+   return arr == str
+ }
+
+isPolindrom("Aba");
+isPolindrom("abad"); */
+
+//3
+/* function sum(...args) {
+ if (args.length>1){
+     return args.reduce((sum,item)=> sum+item,0);
+ }
+return (a)=>{
+   return args[0]+a
+}
+}
+sum(2,3);
+sum(2)(3); */
+
+
+//4
+ 
 }

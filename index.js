@@ -2104,8 +2104,7 @@ sum(2)(3); */
 
 
   //6
-
-  let users = [
+ /*  let users = [
     { name: "John", age: 20, surname: "Johnson" },
     { name: "Pete", age: 18, surname: "Peterson" },
     { name: "Ann", age: 19, surname: "Hathaway" }
@@ -2119,7 +2118,28 @@ sum(2)(3); */
   }
   
   console.log(users.sort(byField('age')));
-
+ */
    
+ //7
+
+ function makeArmy() {
+    let shooters = [];
+  
+    let i = 0;
+    while (i < 10) {
+        let n = i;
+      let shooter = function() {
+        console.log( n ); 
+      };
+      shooters.push(shooter);
+      i++;
+    }
+  
+    return shooters;
+  }
+  
+  let army = makeArmy();
+  army[0](); 
+  army[5]();
 
 }

@@ -2087,12 +2087,39 @@ sum(2)(3); */
   console.log(counter()); */
 
   //5
-  function inBetween(a,b) {
+  /* function inBetween(a,b) {
     return function(item) {
-        if(item >= a && item <= b)  return true;
-        return false
+        return  item >= a && item <= b
     }
   }
   let arr = [1,2,3,4,5,6,7];
   console.log(arr.filter(inBetween(2,6)))
+
+  function inArray(arr) {
+      return (item) => {
+          return arr.includes(item)
+      }
+  }
+  console.log(arr.filter(inArray([1,3,5]))) */
+
+
+  //6
+
+  let users = [
+    { name: "John", age: 20, surname: "Johnson" },
+    { name: "Pete", age: 18, surname: "Peterson" },
+    { name: "Ann", age: 19, surname: "Hathaway" }
+  ];
+
+
+  function byField(field) {
+      return (a,b) => {
+          return a[field] - b[field]
+      }
+  }
+  
+  console.log(users.sort(byField('age')));
+
+   
+
 }

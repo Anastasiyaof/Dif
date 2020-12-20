@@ -2087,14 +2087,12 @@ sum(2)(3); */
   console.log(counter()); */
 
   //5
-  function between(item) {
-    return function(a,b) {
-        if(item >= a || item <= b)  return true;
+  function inBetween(a,b) {
+    return function(item) {
+        if(item >= a && item <= b)  return true;
         return false
     }
   }
-
-  let inBetween = between();
   let arr = [1,2,3,4,5,6,7];
   console.log(arr.filter(inBetween(2,6)))
 }

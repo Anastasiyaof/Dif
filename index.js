@@ -2075,5 +2075,26 @@ sum(2)(3); */
 
 
 //4
- 
+ /*  function makeCounter() {
+      let count = 0;
+      return function () {
+          return ++count
+      }
+  }
+
+  let counter = makeCounter();
+  console.log(counter());
+  console.log(counter()); */
+
+  //5
+  function between(item) {
+    return function(a,b) {
+        if(item >= a || item <= b)  return true;
+        return false
+    }
+  }
+
+  let inBetween = between();
+  let arr = [1,2,3,4,5,6,7];
+  console.log(arr.filter(inBetween(2,6)))
 }

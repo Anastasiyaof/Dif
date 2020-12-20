@@ -1,5 +1,5 @@
 
-let sum = (a,b) => a+b;
+/* let sum = (a,b) => a+b;
 
 Function.prototype.bind2 = function(context,...args) {
   return  (...args2) => {
@@ -8,4 +8,4 @@ Function.prototype.bind2 = function(context,...args) {
 
 let plusTen = sum.bind2(undefined,10);
 console.log(plusTen(1));
-console.log(plusTen(20));
+console.log(plusTen(20)); */

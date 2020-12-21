@@ -2122,7 +2122,7 @@ sum(2)(3); */
    
  //7
 
- function makeArmy() {
+/*  function makeArmy() {
     let shooters = [];
   
     let i = 0;
@@ -2140,6 +2140,37 @@ sum(2)(3); */
   
   let army = makeArmy();
   army[0](); 
-  army[5]();
+  army[5](); */
+
+  //8
+
+  function slow(x) {
+      console.log(`for ${x}`);
+      return x*100
+  }
+
+  function cachingDecorator(fun) {
+      let cache = new Map();
+      return function (x) {
+          if(cache.has(x)) {
+              console.log(`from cache`)
+              return cache.get(x);
+        }
+          let result = fun(x);
+          cache.set(x,result);
+          console.log(`result = ${result}`)
+          return result
+      }
+  }
+
+  slow = cachingDecorator(slow);
+
+  console.log(slow(5));
+  console.log(slow(5));
+
+
+
+
+
 
 }

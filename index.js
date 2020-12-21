@@ -2143,8 +2143,7 @@ sum(2)(3); */
   army[5](); */
 
   //8
-
-  function slow(x) {
+  /* function slow(x) {
       console.log(`for ${x}`);
       return x*100
   }
@@ -2167,7 +2166,7 @@ sum(2)(3); */
 
   console.log(slow(5));
   console.log(slow(5));
-
+ */
 
 
 

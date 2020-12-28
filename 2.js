@@ -12,7 +12,7 @@ console.log(plusTen(20)); */
 
 //mix9
 
-function f(a, b) {
+/* function f(a, b) {
   console.log(a + b);
   return a + b
 }
@@ -24,8 +24,8 @@ Function.prototype.defer = function (ms) {
     }, ms)
 
   }
-}
+} */
 
 
-f.defer(2000)(2, 7)
+//f.defer(2000)(2, 7)
 

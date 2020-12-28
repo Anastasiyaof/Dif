@@ -2168,7 +2168,32 @@ sum(2)(3); */
   console.log(slow(5));
  */
 
+ //9
+let obj = {
+    a: 1,
+    b: { a:2}
+  }
 
+  function deep (obj) {
+    let clone = {};
+for(let key in obj) {
+    if(obj[key].__proto__ === Object.prototype){
+       for (let k in obj[key]) {
+           console.log(k,key)
+        let copy = {};
+      copy[k] = obj[key][k]
+     clone[key] = copy;
+}
+ } else clone[key] = obj[key];
+}
+return clone }
+
+
+let copy = deep(obj);
+copy.b.a = 5;
+console.log("obj",obj);
+console.log("obj.b.a",obj.b.a);
+console.log("copy",copy);
 
 
 

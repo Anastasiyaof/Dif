@@ -2179,7 +2179,6 @@ let obj = {
 for(let key in obj) {
     if(obj[key].__proto__ === Object.prototype){
        for (let k in obj[key]) {
-           console.log(k,key)
         let copy = {};
       copy[k] = obj[key][k]
      clone[key] = copy;
